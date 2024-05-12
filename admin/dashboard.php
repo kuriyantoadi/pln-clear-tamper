@@ -14,7 +14,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             Dashboard
                         </h1>
-                        <div class="page-header-subtitle">Example dashboard overview and content summary</div>
+                        <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai Admin</div>
                     </div>
                    
                 </div>
@@ -31,8 +31,10 @@
                         <div class="row align-items-center">
                             <div class="col-xl-8 col-xxl-12">
                                 <div class="text-center text-xl-start text-xxl-center mb-4 mb-xl-0 mb-xxl-4">
-                                    <h1 class="text-primary">Welcome to SB Admin Pro!</h1>
-                                    <p class="text-gray-700 mb-0">Browse our fully designed UI toolkit! Browse our prebuilt app pages, components, and utilites, and be sure to look at our full documentation!</p>
+                                    <h1 class="text-primary">PLN Clear Tamper ULP Pandeglang</h1>
+                                    <p class="text-gray-700 mb-0">
+                                        PLN Clear Tamper ULP Pandeglang adalah sistem keamanan untuk mendeteksi dan menghapus jejak manipulasi pada infrastruktur listrik PLN di Pandeglang, menjaga keandalan pasokan listrik dan kinerja operasional.
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="../assets/assets/img/illustrations/at-work.svg" style="max-width: 26rem" /></div>

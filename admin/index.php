@@ -41,14 +41,16 @@
                                                 ";
                                             } elseif ($_GET['pesan'] == "logout") {
                                                 echo "
-                                                <div class='alert alert-warning' role='alert'>
-                                                    <center>Anda Berhasil Logout
+                                                <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                                                    Anda Berhasil Logout
+                                                    <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
                                                 </div>
                                                 ";
                                             } elseif ($_GET['pesan'] == "belum_login") {
                                                 echo "
-                                                <div class='alert alert-danger' role='alert'>
-                                                    <center>Maaf anda harus login dulu
+                                                <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                                                    Anda Harus Login
+                                                    <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
                                                 </div>
                                                 ";
                                             }
