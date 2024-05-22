@@ -27,8 +27,8 @@
                             </div>
 
                             <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="user"></i></div>
-                                kelola petugas
+                                <div class="nav-link-icon"><i data-feather="file-plus"></i></div>
+                                Permintaan Clear Tamper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
                         </div>
