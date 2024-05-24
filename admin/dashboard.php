@@ -11,7 +11,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="activity"></i></div>
+                            <div class="page-header-icon"><i data-feather="home"></i></div>
                             Dashboard
                         </h1>
                         <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai Admin</div>

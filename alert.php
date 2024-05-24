@@ -35,6 +35,21 @@
                 <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
             ";
+        } elseif ($_GET['pesan'] == "tambah_berhasil") {
+            echo "
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                Tambah Data Berhasil
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
+         } elseif ($_GET['pesan'] == "edit_password_berhasil") {
+            echo "
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                Edit Password Berhasil
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
         }
+        
     }
 ?>

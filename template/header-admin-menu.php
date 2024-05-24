@@ -8,35 +8,23 @@
                             <!-- Sidenav Menu Heading (Core)-->
                             <div class="sidenav-menu-heading">Menu Admin</div>
                             <!-- Sidenav Accordion (Dashboard)-->
-                            
-                            <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                                Dashboards
-                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-
-                            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link" href="dashboard-1.html">
-                                        Default
-                                        <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                                    </a>
-                                    <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
-                                    <a class="nav-link" href="dashboard-3.html">Affiliate</a>
-                                </nav>
-                            </div> -->
 
                             <a class="nav-link collapsed" href="dashboard.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                <div class="nav-link-icon"><i data-feather="home"></i></div>
                                 Dashboard
-                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
+                            </a>
+
+                            <a class="nav-link collapsed" href="clear_temper.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="zap"></i></div>
+                                Clear Temper
                             </a>
 
                             <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="user"></i></div>
                                 kelola petugas
-                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
+
+                            
                         </div>
                     </div>
 
