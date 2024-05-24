@@ -24,7 +24,7 @@ $data = mysqli_query($koneksi, "select * from tb_user where username='$username'
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($data);
 
-echo "cek2";
+// echo "cek2";
 
 if ($cek > 0) {
     $login = mysqli_fetch_assoc($data);
