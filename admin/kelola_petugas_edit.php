@@ -14,11 +14,12 @@ $jabatan = $_POST['jabatan'];
 $wilker = $_POST['wilker'];
 
 
+
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_user SET
         username='$username',
         nik='$nik',
-        nama_petugas='$nama_petugas'
-        jabatan='$jabatan'
+        nama_petugas='$nama_petugas',
+        jabatan='$jabatan',
         wilker='$wilker'
         where id_user='$id_user'
         ");

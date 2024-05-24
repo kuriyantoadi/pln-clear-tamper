@@ -6,10 +6,10 @@
                         <div class="nav accordion" id="accordionSidenav">
 
                             <!-- Sidenav Menu Heading (Core)-->
-                            <div class="sidenav-menu-heading">Core</div>
+                            <div class="sidenav-menu-heading">Menu Admin</div>
                             <!-- Sidenav Accordion (Dashboard)-->
                             
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Dashboards
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -24,7 +24,13 @@
                                     <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
                                     <a class="nav-link" href="dashboard-3.html">Affiliate</a>
                                 </nav>
-                            </div>
+                            </div> -->
+
+                            <a class="nav-link collapsed" href="dashboard.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Dashboard
+                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
+                            </a>
 
                             <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="user"></i></div>

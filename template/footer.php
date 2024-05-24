@@ -23,5 +23,16 @@
         <script src="../assets/js/datatables/datatables-simple-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
         <script src="../assets/js/litepicker.js"></script>
+
+        <script src="../assets/dataTable/jquery.js"></script>
+        <script src="../assets/dataTable/jquery.dataTables.min.js"></script>
+        <script src="../assets/dataTable/dataTables.bootstrap4.min.js"></script>
+
+
+        <script>
+            $(document).ready(function() {
+                $('#tabel_js').DataTable();
+            });
+        </script>
     </body>
 </html>

@@ -1,5 +1,5 @@
 <!-- Modal Detail Awal-->
-<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="detail<?php echo $d['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -38,9 +38,9 @@
 </div>
 <!-- Modal Detail Akhir -->
 
+
 <!-- Modal Edit Awal-->
-<!-- Modal Edit Awal-->
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo $d['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -48,9 +48,9 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="kelola_petugas_edit.php" method="post">
+                <form action="kelola_petugas_edit.php" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
-                    <input type="hidden" name="id_user" value="<?= htmlspecialchars($d['id_user']) ?>">
+                    <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
                     <table class="table">
                         <tr>
                             <td>Username</td>
@@ -74,10 +74,11 @@
                         </tr>
                     </table>
                     <!-- Tambahkan token CSRF di sini jika diperlukan -->
-                    <!-- <input type="hidden" name="csrf_token" value="your_csrf_token_here"> -->
+                    <input type="hidden" name="csrf_token" value="your_csrf_token_here">
             </div>
             <div class="modal-footer">
                 <!-- Tombol Submit untuk menyimpan perubahan -->
+                <!-- <input type="submit" class="btn btn-info btn" style="margin-bottom: 50px" name="upload" value="simpan"> -->
                 <input type="submit" class="btn btn-primary btn-sm" value="Simpan">
                 </form>
                 <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Tutup</button>
@@ -86,3 +87,4 @@
     </div>
 </div>
 <!-- Modal Edit Akhir -->
+

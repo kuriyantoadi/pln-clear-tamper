@@ -14,13 +14,16 @@ if ($_SESSION['status'] != "admin") {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin Pro</title>
+        <title>PLN Temper</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
         <link href="../assets/css/styles.css" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    
+        <!-- data table -->
+        <link rel="stylesheet" href="../asstes/dataTable/jquery.dataTables.min.js">
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
@@ -30,7 +33,7 @@ if ($_SESSION['status'] != "admin") {
             <!-- * * Tip * * You can use text or an image for your navbar brand.-->
             <!-- * * * * * * When using an image, we recommend the SVG format.-->
             <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">SB Admin Pro</a>
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="dashboard.php">PLN Temper</a>
             <!-- Navbar Search Input-->
             <!-- * * Note: * * Visible only on and above the lg breakpoint-->
             

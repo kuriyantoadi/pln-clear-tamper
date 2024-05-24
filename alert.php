@@ -14,10 +14,17 @@
                 <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
             ";
-        } elseif ($_GET['pesan'] == "berhasil") {
+        } elseif ($_GET['pesan'] == "edit_berhasil") {
             echo "
             <div class='alert alert-primary alert-dismissible fade show' role='alert'>
                 Update Data Berhasil
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
+        } elseif ($_GET['pesan'] == "hapus_berhasil") {
+            echo "
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                Hapus Data Berhasil
                 <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
             ";
