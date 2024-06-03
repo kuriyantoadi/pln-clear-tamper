@@ -51,15 +51,11 @@
                      <tr>
                         <th>Status Permintaan</th>
                         <td>: 
-                            <?php if($d['status_permintaan'] == 'pengajuan'){ ?>
-                                <div class="badge bg-danger text-white rounded-pill">Pengajuan</div>
-                            <?php }elseif($d['status_permintaan'] == 'proses'){ ?>
-                                <div class="badge bg-warning text-white rounded-pill">Proses</div>
-                            <?php }elseif($d['status_permintaan'] == 'terkirim'){ ?>
-                                <div class="badge bg-info text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['status_permintaan'] == 'selesai'){ ?>
-                                <div class="badge bg-success text-white rounded-pill">Selesai</div>
-                            <?php } ?> 
+                            <?php if($d['kode_temper']){ ?>
+                                <div class="badge bg-success text-white rounded-pill">Terkirim</div>
+                            <?php }elseif($d['kode_temper'] == NULL){ ?>
+                                <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
+                            <?php } ?>
                        </td>
                     </tr>
                 </table>
@@ -77,7 +73,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalXl">Detail Pengajuan Clear Temper</h5>
+                <h5 class="modal-title" id="exampleModalXl">Kirim Kode Clear Temper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -122,7 +118,7 @@
                     <tr>
                         <th>Kode Temper</th>
                         <td>
-                            <input type="text" name="kode_temper" class="form-control"  require>
+                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" require>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                         </td>
                     </tr>

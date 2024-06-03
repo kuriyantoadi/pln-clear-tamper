@@ -37,6 +37,7 @@
                         <th>No</th>
                         <th>Tanggal Permintaan</th>
                         <th>Nama Petugas</th>
+                        <th>Nomor Meter</th>
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
                        
@@ -48,19 +49,11 @@
 
                 // Perform the join query
                 $query = "
-                    SELECT 
-                        ct.*, 
-                        u.username, 
-                        u.nama_petugas, 
-                        u.jabatan, 
-                        u.wilker, 
-                        u.status 
-                    FROM 
-                        tb_clear_temper ct
-                    JOIN 
-                        tb_user u 
-                    ON 
-                        ct.id_user = u.id_user";
+                SELECT * 
+                FROM tb_clear_temper
+                JOIN tb_user 
+                ON tb_clear_temper.id_user = tb_user.id_user;
+                ";
 
                 $data = mysqli_query($koneksi, $query);
 
@@ -78,20 +71,16 @@
                         <td><?= $no++ ?></td>
                         <td><?= $d['tgl_permintaan'] ?></td>
                         <td><?= $d['nama_petugas'] ?></td>
+                        <td><?= $d['no_meter'] ?></td>
                         <td>
-
-                            <?php if($d['status_permintaan'] == 'pengajuan'){ ?>
-                                <div class="badge bg-danger text-white rounded-pill">Pengajuan</div>
-                            <?php }elseif($d['status_permintaan'] == 'proses'){ ?>
-                                <div class="badge bg-warning text-white rounded-pill">Proses</div>
-                            <?php }elseif($d['status_permintaan'] == 'terkirim'){ ?>
-                                <div class="badge bg-info text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['status_permintaan'] == 'selesai'){ ?>
-                                <div class="badge bg-success text-white rounded-pill">Selesai</div>
+                            <?php if($d['kode_temper']){ ?>
+                                <div class="badge bg-success text-white rounded-pill">Terkirim</div>
+                            <?php }elseif($d['kode_temper'] == NULL){ ?>
+                                <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
                             <?php } ?> 
                        </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="kelola_petugas_hapus.php?id_user=<?php echo $d['id_user']; ?>" onclick="return confirm('Anda yakin Hapus data user <?php echo $d['nama_petugas']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_meter']; ?> ?')"><i data-feather="trash-2"></i></a>
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_user'] ?>" id=".$d['id_user']."><i data-feather="edit"></i></button>
                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_user'] ?>" id=".$d['id_user']."><i data-feather="eye"></i></button>
                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_temper<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="unlock"></i></button>
