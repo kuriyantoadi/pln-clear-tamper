@@ -49,6 +49,13 @@
                 <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
             ";
+        } elseif ($_GET['pesan'] == "update_clear_temper_berhasil") {
+            echo "
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                Update Clear Tamper Berhasil
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
         }
         
     }
