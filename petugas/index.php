@@ -14,7 +14,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             Dashboard
                         </h1>
-                        <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai Admin</div>
+                        <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai Petugas</div>
                     </div>
                    
                 </div>
