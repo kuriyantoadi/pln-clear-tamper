@@ -132,6 +132,7 @@
                                     <option value="">Pilihan</option>
                                     <option value="admin">admin</option>
                                     <option value="petugas">petugas</option>
+                                    <option value="pimpinan">pimpinan</option>
                                 </select>
                             </td>
                         </tr>

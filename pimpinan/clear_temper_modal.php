@@ -251,14 +251,13 @@
                             <td>Wilayah Kerja</td>
                             <td><input class="form-control" type="text" name="wilker" value="" required></td>
                         </tr>
-                        <tr>
+                         <tr>
                             <td>Status</td>
                             <td>
                                 <select name="status" class="form-control" id="">
                                     <option value="">Pilihan</option>
                                     <option value="admin">admin</option>
                                     <option value="petugas">petugas</option>
-                                    <option value="pimpinan">pimpinan</option>
                                 </select>
                             </td>
                         </tr>
