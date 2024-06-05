@@ -40,6 +40,12 @@ if ($cek > 0) {
         $_SESSION['status'] = "petugas";
         // echo "cek";
         header("location:../petugas/index.php");
+        
+    } elseif ($login['status']=="pimpinan") {
+        $_SESSION['username'] = $username;
+        $_SESSION['status'] = "pimpinan";
+        // echo "cek";
+        header("location:../pimpinan/index.php");
     } else {
         // echo "salah1";
         header("location:index.php?pesan=gagal1");
