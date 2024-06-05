@@ -16,7 +16,6 @@
                         </h1>
                         <div class="page-header-subtitle">Halaman Clear Temper</div>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -40,12 +39,12 @@
                         <th>Nomor Meter</th>
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
-                       
+                    
                     </tr>
                 </thead>
                 
-               <?php
-               include '../koneksi.php';
+                <?php
+                include '../koneksi.php';
 
                 // Perform the join query
                 $query = "
@@ -78,7 +77,7 @@
                             <?php }elseif($d['kode_temper'] == NULL){ ?>
                                 <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
                             <?php } ?> 
-                       </td>
+                        </td>
                         <td>
                             <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_meter']; ?> ?')"><i data-feather="trash-2"></i></a>
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="edit"></i></button>
