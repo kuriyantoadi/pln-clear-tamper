@@ -30,7 +30,9 @@
 
             <?php include('../alert.php'); ?>
 
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Tambah Petugas</button>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Permintaan Clear Tamper</button>
+            
+            <?php include('clear_temper_modal_tambah.php') ?>
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>
@@ -73,16 +75,18 @@
                         <td><?= $d['nama_petugas'] ?></td>
                         <td><?= $d['no_meter'] ?></td>
                         <td>
-                            <?php if($d['kode_temper']){ ?>
+                            <?php if($d['status_permintaan'] == "terkirim"){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['kode_temper'] == NULL){ ?>
-                                <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
+                            <?php }elseif($d['status_permintaan'] == "proses"){ ?>
+                                <div class="badge bg-warning text-white rounded-pill">Proses</div>
+                            <?php }else{ ?>
+                                <div class="badge bg-danger text-white rounded-pill">Error</div>
                             <?php } ?> 
                        </td>
                         <td>
                             <!-- <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_meter']; ?> ?')"><i data-feather="trash-2"></i></a> -->
                             <!-- <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_user'] ?>" id=".$d['id_user']."><i data-feather="edit"></i></button> -->
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_user'] ?>" id=".$d['id_user']."><i data-feather="eye"></i></button>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="eye"></i></button>
                             <!-- <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_temper<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="unlock"></i></button> -->
                             <?php include('clear_temper_modal.php') ?>
                         </td>
