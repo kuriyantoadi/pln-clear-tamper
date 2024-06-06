@@ -13,7 +13,10 @@
                     <table class="table">
                         <tr>
                             <td>bondg</td>
-                            <td><input class="form-control" type="text" name="bondg" value="" required></td>
+                            <td>
+                                <input class="form-control" type="text" name="bondg" value="" required>
+                                <input type="hidden" name="id_user" value="<?= $id_user = $_SESSION['id_user']; ?>">
+                            </td>
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
@@ -39,6 +42,7 @@
                             <td>No Meter</td>
                             <td><input class="form-control" type="text" name="no_meter" value="" required></td>
                         </tr>
+                       
                         <tr>
                             <td>Indikasi</td>
                             <td><input class="form-control" type="text" name="indikasi" value="" required></td>
@@ -47,10 +51,7 @@
                             <td>Photo KWH</td>
                             <td><input class="form-control" type="text" name="photo_kwh" value="" required></td>
                         </tr>
-                        <!-- <tr>
-                            <td>Id User</td>
-                            <td><input class="form-control" type="text" name="id_user" value="<?= $d('id_user') ?> " required></td>
-                        </tr> -->
+                        
                         
                     </table>
                     <!-- Tambahkan token CSRF di sini jika diperlukan -->

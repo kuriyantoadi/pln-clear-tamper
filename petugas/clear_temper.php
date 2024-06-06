@@ -31,8 +31,8 @@
             <?php include('../alert.php'); ?>
 
             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Permintaan Clear Tamper</button>
+            
             <?php include('clear_temper_modal_tambah.php') ?>
-
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>
