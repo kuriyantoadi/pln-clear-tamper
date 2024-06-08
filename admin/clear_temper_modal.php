@@ -41,8 +41,8 @@
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
                     <tr>
-                        <th>id_user</th>
-                        <td>: <?= htmlspecialchars($d['id_user']) ?></td>
+                        <th>Photo KWH</th>
+                        <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
                         <th>Kode Temper</th>
@@ -51,9 +51,9 @@
                      <tr>
                         <th>Status Permintaan</th>
                         <td>: 
-                            <?php if($d['kode_temper'] == 'Terkirim'){ ?>
+                            <?php if($d['status_permintaan'] == 'terkirim'){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['kode_temper'] == 'proses'){ ?>
+                            <?php }elseif($d['status_permintaan'] == 'proses'){ ?>
                                 <div class="badge bg-warning text-white rounded-pill">Proses</div>
                             <?php }else { ?>
                                 <div class="badge bg-danger text-white rounded-pill">Error</div>
@@ -154,27 +154,27 @@
                     <tr>
                     <tr>
                             <td>Username</td>
-                            <td><input class="form-control" type="text" name="username" value="" required></td>
+                            <td><input class="form-control" type="text" name="username" value="<?= htmlspecialchars($d['username'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Password</td>
-                            <td><input class="form-control" type="text" name="password" value="" required></td>
+                            <td><input class="form-control" type="text" name="password" value="<?= htmlspecialchars($d['password'])?>" required></td>
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="" required></td>
+                            <td><input class="form-control" type="text" name="nik" value="<?= htmlspecialchars($d['nik'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Nama Petugas</td>
-                            <td><input class="form-control" type="text" name="nama_petugas" value="" required></td>
+                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="" required></td>
+                            <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="" required></td>
+                            <td><input class="form-control" type="text" name="wilker" value="<?= htmlspecialchars($d['wilker'])?>" required></td>
                         </tr>
                                                  
 

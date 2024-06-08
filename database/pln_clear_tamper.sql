@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 03, 2024 at 06:46 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Host: 127.0.0.1:3306
+-- Waktu pembuatan: 08 Jun 2024 pada 01.38
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_clear_temper`
+-- Struktur dari tabel `tb_clear_temper`
 --
 
 CREATE TABLE `tb_clear_temper` (
@@ -42,19 +41,23 @@ CREATE TABLE `tb_clear_temper` (
   `id_user` varchar(10) NOT NULL,
   `kode_temper` varchar(50) NOT NULL,
   `status_permintaan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_clear_temper`
+-- Dumping data untuk tabel `tb_clear_temper`
 --
 
 INSERT INTO `tb_clear_temper` (`id_clear_temper`, `bondg`, `tgl_permintaan`, `nama_pelapor`, `alamat`, `no_hp`, `id_pelanggan`, `no_meter`, `indikasi`, `photo_kwh`, `id_user`, `kode_temper`, `status_permintaan`) VALUES
-(1, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'terkirim');
+(30, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '111', 'terkirim'),
+(31, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'terkirim'),
+(39, '1', '1', '1', '1', '1', '1', '1', '1', 'photo_kwh_20240607_141857.png', '2', '1', 'terkirim'),
+(40, '1', '1', '1', '1', '1', '1', '1', '1', 'photo_kwh_20240607_142452.png', '2', '', 'proses'),
+(41, '2', '2', '2', '2', '2', '2', '2', '2', 'photo_kwh_20240608_012632.png', '2', '', 'proses');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Struktur dari tabel `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -66,48 +69,48 @@ CREATE TABLE `tb_user` (
   `jabatan` varchar(50) NOT NULL,
   `wilker` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data untuk tabel `tb_user`
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nik`, `nama_petugas`, `jabatan`, `wilker`, `status`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin', 'admin', 'admin', 'admin', 'admin'),
-(2, 'petugas2', '356a192b7913b04c54574d18c28d46e6395428ab', '123', 'petugas2', 'petugas', 'serang', 'petugas'),
-(3, '1', '356a192b7913b04c54574d18c28d46e6395428ab', '1', '1', '1', '1', 'admin');
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', '1', '1', '1', 'admin'),
+(2, 'petugas', '356a192b7913b04c54574d18c28d46e6395428ab', '1', '1', '1', '1', 'petugas'),
+(3, 'pimpinan', '356a192b7913b04c54574d18c28d46e6395428ab', '19271', 'pimpinan', 'pimpinan', 'pimpinan', 'pimpinan');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_clear_temper`
+-- Indeks untuk tabel `tb_clear_temper`
 --
 ALTER TABLE `tb_clear_temper`
   ADD PRIMARY KEY (`id_clear_temper`);
 
 --
--- Indexes for table `tb_user`
+-- Indeks untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_clear_temper`
+-- AUTO_INCREMENT untuk tabel `tb_clear_temper`
 --
 ALTER TABLE `tb_clear_temper`
-  MODIFY `id_clear_temper` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_clear_temper` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
