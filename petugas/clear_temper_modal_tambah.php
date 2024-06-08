@@ -49,7 +49,7 @@
                         </tr>
                         <tr>
                             <td>Photo KWH</td>
-                            <td><input class="form-control" type="text" name="photo_kwh" value="" required></td>
+                            <td><input class="form-control" type="file" name="photo_kwh" value="" required></td>
                         </tr>
                         
                         

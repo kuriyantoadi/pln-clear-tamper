@@ -18,7 +18,13 @@ $no_hp = mysqli_real_escape_string($koneksi, $_POST['no_hp']);
 $id_pelanggan = mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']);
 $no_meter = mysqli_real_escape_string($koneksi, $_POST['no_meter']);
 $indikasi = mysqli_real_escape_string($koneksi, $_POST['indikasi']);
-$photo_kwh = mysqli_real_escape_string($koneksi, $_POST['photo_kwh']);
+
+// Upload Photo_kwh
+$photo_kwh = upload();
+if(!$photo_kwh) {
+    return false;
+}
+
 $id_user = mysqli_real_escape_string($koneksi, $_POST['id_user']);
 $kode_temper = '';
 $status_permintaan = 'proses';
@@ -46,5 +52,38 @@ if ($cek_tambah) {
     header("Location: clear_temper.php?pesan=tambah_berhasil");
 } else {
     echo "Error: " . mysqli_error($koneksi);
+}
+
+function upload() {
+    $namaFile = $_FILES['photo_kwh']['name'];
+    $ukuranFile = $_FILES['photo_kwh']['size'];
+    $error = $_FILES['photo_kwh']['error'];
+    $tmpName = $_FILES['photo_kwh']['tmp_name'];
+
+    // cek apakah yang diupload adalah gambar
+    $extentionGambarValid = ['jpg', 'jpeg', 'png'];
+    $extentionGambar = explode('.', $namaFile);
+    $extentionGambar = strtolower(end($extentionGambar));
+    if (!in_array($extentionGambar, $extentionGambarValid)) {
+        echo "<script>
+                    alert('Ini bukan gambar woi!');
+              </script>";
+        return false;
+    }
+    // cek jika ukuranya terlalu besar
+    if ($ukuranFile > 1000000) {
+        echo "<script>
+                    alert('Ukuran gambarnya kegedean woi!');
+              </script>";
+        return false;
+    }
+
+    // lolos pengecekan, gambar siap Upload
+    // generate nama gambar baru
+    // Tentukan nama file baru berdasarkan waktu upload
+    $namaFileBaru = 'photo_kwh'.'_'.date('Ymd_His').'.'.$extentionGambar;
+
+    move_uploaded_file($tmpName, '../assets/photo_kwh/' . $namaFileBaru);
+    return $namaFileBaru;
 }
 ?>

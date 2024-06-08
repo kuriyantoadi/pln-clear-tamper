@@ -41,8 +41,8 @@
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
                     <tr>
-                        <th>id_user</th>
-                        <td>: <?= htmlspecialchars($d['id_user']) ?></td>
+                        <th>photo_kwh</th>
+                        <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                    
                      <tr>
