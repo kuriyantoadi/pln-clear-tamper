@@ -10,7 +10,7 @@
                 <table class="table">
                     <tr>
                         <th>Username</th>
-                        <td>: <?= htmlspecialchars($d['username']) ?><?=</td>
+                        <td>: <?= htmlspecialchars($d['username']) ?></td>
                     </tr>
                     <tr>
                         <th>NIK</th>
