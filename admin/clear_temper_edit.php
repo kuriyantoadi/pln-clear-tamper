@@ -7,7 +7,7 @@ if ($_SESSION['status'] != "admin") {
 include '../koneksi.php';
 
 $id_clear_temper = htmlspecialchars($_POST['id_clear_temper']);
-$bondg = htmlspecialchars($_POST['kode_temper']);
+$bondg = htmlspecialchars($_POST['bondg']);
 $tgl_permintaan = htmlspecialchars($_POST['tgl_permintaan']);
 $nama_pelapor = htmlspecialchars($_POST['nama_pelapor']);
 $alamat = htmlspecialchars($_POST['alamat']);
@@ -15,8 +15,15 @@ $no_hp = htmlspecialchars($_POST['no_hp']);
 $id_pelanggan = htmlspecialchars($_POST['id_pelanggan']);
 $no_meter = htmlspecialchars($_POST['no_meter']);
 $indikasi = htmlspecialchars($_POST['indikasi']);
-$id_user = htmlspecialchars($_POST['id_user']);
 $kode_temper = htmlspecialchars($_POST['kode_temper']);
+
+if($kode_temper == NULL){ // jika kode temper kosong
+    $status_permintaan = 'proses';
+}elseif(!empty($kode_temper)){ // jika kode temper tidak kosong
+    $status_permintaan = 'terkirim';
+}else{
+    $status_permintaan = '';
+}
 
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_temper SET
         bondg='$bondg',
@@ -27,9 +34,8 @@ $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_temper SET
         id_pelanggan='$id_pelanggan',
         no_meter='$no_meter',
         indikasi='$indikasi',
-        id_user='$id_user',
         kode_temper='$kode_temper'
-
+        status_permintaan='$status_permintaan'
         WHERE id_clear_temper='$id_clear_temper'
         ");
 

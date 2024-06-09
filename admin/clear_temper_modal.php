@@ -9,6 +9,10 @@
             <div class="modal-body">
                 <table class="table table-hover">
                     <tr>
+                        <th>Nama Petugas</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
                         <th>Bondg</th>
                         <td>: <?= htmlspecialchars($d['bondg']) ?></td>
                     </tr>
@@ -83,6 +87,10 @@
                 <form action="clear_temper_kirim.php" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
                     <tr>
+                        <th>Nama Petugas</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
                         <th>Bondg</th>
                         <td>: <?= htmlspecialchars($d['bondg']) ?></td>
                     </tr>
@@ -121,7 +129,7 @@
                     <tr>
                         <th>Kode Temper</th>
                         <td>
-                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" require>
+                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" required>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                         </td>
                     </tr>
@@ -144,7 +152,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Petugas</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -152,32 +160,58 @@
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                     <tr>
-                    <tr>
-                            <td>Username</td>
-                            <td><input class="form-control" type="text" name="username" value="<?= htmlspecialchars($d['username'])?>" required></td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td><input class="form-control" type="text" name="password" value="<?= htmlspecialchars($d['password'])?>" required></td>
-                        </tr>
-                        <tr>
-                            <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="<?= htmlspecialchars($d['nik'])?>" required></td>
-                        </tr>
-                        <tr>
                             <td>Nama Petugas</td>
-                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas'])?>" required></td>
+                            <td>
+                                <select name="status" class="form-control" id="">
+                                    <option value="">Pilihan</option>
+                                    <option value=""><?= htmlspecialchars($d_petugas['nama_petugas'])?></option>
+                                        <?php
+                                            $d_petugas = mysqli_query($koneksi, "select * from tb_user where status='petugas'");
+                                            while ($d = mysqli_fetch_array($d_petugas)) {
+                                        ?>
+                                            <option value="<?php echo $d['nama_petugas'] ?>"><?php echo $d['nama_petugas'] ?></option>
+                                        <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                    <tr>
+                            <td>bondg</td>
+                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" required></td>
                         </tr>
                         <tr>
-                            <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan'])?>" required></td>
+                            <td>tgl_permintaan</td>
+                            <td><input class="form-control" type="text" name="tgl_permintaan" value="<?= htmlspecialchars($d['tgl_permintaan'])?>" required></td>
                         </tr>
                         <tr>
-                            <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="<?= htmlspecialchars($d['wilker'])?>" required></td>
+                            <td>nama_pelapor</td>
+                            <td><input class="form-control" type="text" name="nama_pelapor" value="<?= htmlspecialchars($d['nama_pelapor'])?>" required></td>
                         </tr>
-                                                 
-
+                        <tr>
+                            <td>Alamat</td>
+                            <td><input class="form-control" type="text" name="alamat" value="<?= htmlspecialchars($d['alamat'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>No HP</td>
+                            <td><input class="form-control" type="text" name="no_hp" value="<?= htmlspecialchars($d['no_hp'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Id Pelangan</td>
+                            <td><input class="form-control" type="text" name="id_pelanggan" value="<?= htmlspecialchars($d['id_pelanggan'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>No Meter</td>
+                            <td><input class="form-control" type="text" name="no_meter" value="<?= htmlspecialchars($d['no_meter'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Indikasi</td>
+                            <td><input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required></td>
+                        </tr>                                           
+                        <tr>
+                            <td>Kode Tamper</td>
+                            <td>
+                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" required>
+                            <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
+                            </td>
                 </table>
 
 
