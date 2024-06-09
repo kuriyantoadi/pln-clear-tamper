@@ -16,6 +16,7 @@ $id_pelanggan = htmlspecialchars($_POST['id_pelanggan']);
 $no_meter = htmlspecialchars($_POST['no_meter']);
 $indikasi = htmlspecialchars($_POST['indikasi']);
 $kode_temper = htmlspecialchars($_POST['kode_temper']);
+$id_user = htmlspecialchars($_POST['id_user']);
 
 if($kode_temper == NULL){ // jika kode temper kosong
     $status_permintaan = 'proses';
@@ -34,7 +35,8 @@ $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_temper SET
         id_pelanggan='$id_pelanggan',
         no_meter='$no_meter',
         indikasi='$indikasi',
-        kode_temper='$kode_temper'
+        kode_temper='$kode_temper',
+        id_user='$id_user',
         status_permintaan='$status_permintaan'
         WHERE id_clear_temper='$id_clear_temper'
         ");

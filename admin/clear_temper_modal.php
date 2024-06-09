@@ -162,14 +162,13 @@
                     <tr>
                             <td>Nama Petugas</td>
                             <td>
-                                <select name="status" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                    <option value=""><?= htmlspecialchars($d_petugas['nama_petugas'])?></option>
+                                <select name="id_user" class="form-control" id="">
+                                    <option value="<?= $d['id_user']?>">Pilihan Awal = <?= $d['nama_petugas']?></option>
                                         <?php
-                                            $d_petugas = mysqli_query($koneksi, "select * from tb_user where status='petugas'");
-                                            while ($d = mysqli_fetch_array($d_petugas)) {
+                                            $d1 = mysqli_query($koneksi, "select * from tb_user where status='petugas'");
+                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
                                         ?>
-                                            <option value="<?php echo $d['nama_petugas'] ?>"><?php echo $d['nama_petugas'] ?></option>
+                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
                                         <?php } ?>
                                 </select>
                             </td>
