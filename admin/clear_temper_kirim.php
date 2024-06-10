@@ -7,11 +7,11 @@ if ($_SESSION['status'] != "admin") {
 include '../koneksi.php';
 
 $id_clear_temper = htmlspecialchars($_POST['id_clear_temper']);
-$kode_temper = htmlspecialchars($_POST['kode_temper']);
+$clear_temper = htmlspecialchars($_POST['clear_temper']);
 
-if($kode_temper == NULL){ // jika kode temper kosong
+if($clear_temper == NULL){ // jika kode temper kosong
     $status_permintaan = 'proses';
-}elseif(!empty($kode_temper)){ // jika kode temper tidak kosong
+}elseif(!empty($clear_temper)){ // jika kode temper tidak kosong
     $status_permintaan = 'terkirim';
 }else{
     $status_permintaan = '';
@@ -19,7 +19,7 @@ if($kode_temper == NULL){ // jika kode temper kosong
 
 
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_temper SET
-        kode_temper='$kode_temper',
+        clear_temper='$clear_temper',
         status_permintaan='$status_permintaan' WHERE id_clear_temper='$id_clear_temper'
         ");
 

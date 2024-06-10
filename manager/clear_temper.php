@@ -1,5 +1,5 @@
-<?php include('../template/header-pimpinan.php') ?>
-<?php include('../template/header-pimpinan-menu.php') ?>
+<?php include('../template/header-manager.php') ?>
+<?php include('../template/header-manager-menu.php') ?>
 
 
 <!-- batas konten atas -->
@@ -36,7 +36,7 @@
                         <th>No</th>
                         <th>Tanggal Permintaan</th>
                         <th>Nama Petugas</th>
-                        <th>Nomor Meter</th>
+                        <th>Nomor KWH</th>
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
                     
@@ -63,23 +63,24 @@
 
                 $no=1;
                 while ($d = mysqli_fetch_array($data)) {
+                    $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
 
                 ?>
                 
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $d['tgl_permintaan'] ?></td>
+                        <td><?= date('d F Y', strtotime($date_value)) ?></td>
                         <td><?= $d['nama_petugas'] ?></td>
-                        <td><?= $d['no_meter'] ?></td>
+                        <td><?= $d['no_kwh'] ?></td>
                         <td>
-                            <?php if($d['kode_temper']){ ?>
+                            <?php if($d['clear_temper']){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['kode_temper'] == NULL){ ?>
+                            <?php }elseif($d['clear_temper'] == NULL){ ?>
                                 <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
                             <?php } ?> 
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_meter']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="edit"></i></button>
                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="eye"></i></button>
                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_temper<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="unlock"></i></button>

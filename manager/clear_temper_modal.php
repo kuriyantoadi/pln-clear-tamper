@@ -14,7 +14,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
+                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -29,12 +29,9 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelangan</th>
-                        <td>: <?= htmlspecialchars($d['id_pelanggan']) ?></td>
-                    </tr>
                     <tr>
-                        <th>Nomor Meter</th>
-                        <td>: <?= htmlspecialchars($d['no_meter']) ?></td>
+                        <th>Nomor KWH</th>
+                        <td>: <?= htmlspecialchars($d['no_kwh']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
@@ -45,15 +42,15 @@
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Kode Temper</th>
-                        <td>: <?= htmlspecialchars($d['kode_temper']) ?></td>
+                        <th>Clear Tamper</th>
+                        <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
                     </tr>
                      <tr>
                         <th>Status Permintaan</th>
                         <td>: 
-                            <?php if($d['kode_temper']){ ?>
+                            <?php if($d['clear_temper']){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['kode_temper'] == NULL){ ?>
+                            <?php }elseif($d['clear_temper'] == NULL){ ?>
                                 <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
                             <?php } ?>
                        </td>
@@ -85,7 +82,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
+                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -100,12 +97,8 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelangan</th>
-                        <td>: <?= htmlspecialchars($d['id_pelanggan']) ?></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor Meter</th>
-                        <td>: <?= htmlspecialchars($d['no_meter']) ?></td>
+                        <th>Nomor KWH</th>
+                        <td>: <?= htmlspecialchars($d['no_kwh']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
@@ -116,9 +109,9 @@
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Kode Temper</th>
+                        <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" require>
+                            <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" require>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                         </td>
                     </tr>
@@ -157,7 +150,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td><input type="text" name="tgl_permintaan" class="form-control" value="<?= htmlspecialchars($d['tgl_permintaan']) ?>"></td>
+                        <td><input type="date" name="tgl_permintaan" class="form-control" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>"></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -172,12 +165,8 @@
                         <td><input type="text" name="no_hp" class="form-control" value="<?= htmlspecialchars($d['no_hp']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelanggan</th>
-                        <td><input type="text" name="id_pelanggan" class="form-control" value="<?= htmlspecialchars($d['id_pelanggan']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor Meter</th>
-                        <td><input type="text" name="no_meter" class="form-control" value="<?= htmlspecialchars($d['no_meter']) ?>"></td>
+                        <th>Nomor KWH</th>
+                        <td><input type="text" name="no_kwh" class="form-control" value="<?= htmlspecialchars($d['no_kwh']) ?>"></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
@@ -188,9 +177,9 @@
                         <td><input type="text" name="id_user" class="form-control" value="<?= htmlspecialchars($d['id_user']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Kode Temper</th>
+                        <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="kode_temper" class="form-control" value="<?= htmlspecialchars($d['kode_temper']) ?>">
+                            <input type="text" name="clear_temper" class="form-control" value="<?= htmlspecialchars($d['clear_temper']) ?>">
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                         </td>
                     </tr>

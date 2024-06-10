@@ -16,7 +16,7 @@ $nama_pelapor = mysqli_real_escape_string($koneksi, $_POST['nama_pelapor']);
 $alamat = mysqli_real_escape_string($koneksi, $_POST['alamat']);
 $no_hp = mysqli_real_escape_string($koneksi, $_POST['no_hp']);
 $id_pelanggan = mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']);
-$no_meter = mysqli_real_escape_string($koneksi, $_POST['no_meter']);
+$no_kwh = mysqli_real_escape_string($koneksi, $_POST['no_kwh']);
 $indikasi = mysqli_real_escape_string($koneksi, $_POST['indikasi']);
 
 // Upload Photo_kwh
@@ -38,7 +38,7 @@ $query = "INSERT INTO tb_clear_temper VALUES (
                         '$alamat', 
                         '$no_hp',
                         '$id_pelanggan',
-                        '$no_meter', 
+                        '$no_kwh', 
                         '$indikasi', 
                         '$photo_kwh', 
                         '$id_user', 
@@ -67,8 +67,14 @@ function upload() {
     if (!in_array($extentionGambar, $extentionGambarValid)) {
         echo "<script>
                     alert('Ini bukan gambar woi!');
+                    window.location.href = 'clear_temper.php?pesan=tambah_gagal';
               </script>";
+        
         return false;
+    } else {
+        echo "<script>
+                    alert('Berhasil terunggah');
+              </script>";
     }
     // cek jika ukuranya terlalu besar
     if ($ukuranFile > 1000000) {

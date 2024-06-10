@@ -35,12 +35,9 @@
                             <td><input class="form-control" type="text" name="no_hp" value="" required></td>
                         </tr>
                         <tr>
-                            <td>Id Pelangan</td>
-                            <td><input class="form-control" type="text" name="id_pelanggan" value="" required></td>
-                        </tr>
                         <tr>
-                            <td>No Meter</td>
-                            <td><input class="form-control" type="text" name="no_meter" value="" required></td>
+                            <td>Nomor KWH</td>
+                            <td><input class="form-control" type="text" name="no_kwh" value="" required></td>
                         </tr>
                        
                         <tr>

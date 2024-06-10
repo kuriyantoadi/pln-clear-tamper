@@ -37,7 +37,7 @@
                         <th>No</th>
                         <th>Tanggal Permintaan</th>
                         <th>Nama Petugas</th>
-                        <th>Nomor Meter</th>
+                        <th>Nomor KWH</th>
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
                        
@@ -52,7 +52,8 @@
                 SELECT * 
                 FROM tb_clear_temper
                 JOIN tb_user 
-                ON tb_clear_temper.id_user = tb_user.id_user;
+                ON tb_clear_temper.id_user = tb_user.id_user
+                ORDER BY tgl_permintaan ASC;
                 ";
 
                 $data = mysqli_query($koneksi, $query);
@@ -61,17 +62,26 @@
                     echo "Error: " . mysqli_error($koneksi);
                     exit;
                 }
+                
+                // Set locale to Indonesian
+                // setlocale(LC_TIME, 'id_ID.UTF-8');
+                // Check if tgl_permintaan is set, otherwise use today's date
+                // $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
+
 
                 $no=1;
                 while ($d = mysqli_fetch_array($data)) {
+                    
+                    $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
+
 
                 ?>
                 
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $d['tgl_permintaan'] ?></td>
+                        <td><?= date('d F Y', strtotime($date_value)) ?></td>
                         <td><?= $d['nama_petugas'] ?></td>
-                        <td><?= $d['no_meter'] ?></td>
+                        <td><?= $d['no_kwh'] ?></td>
                         <td>
                             <?php if($d['status_permintaan'] == 'terkirim'){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
@@ -82,7 +92,7 @@
                                 <?php } ?> 
                        </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_meter']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="edit"></i></button>
                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="eye"></i></button>
                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_temper<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="unlock"></i></button>

@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-if ($_SESSION['status'] != "pimpinan") {
+if ($_SESSION['status'] != "manager") {
     header("location:index.php?pesan=belum_login");
 }
 ?>

@@ -132,7 +132,7 @@
                                     <option value="">Pilihan</option>
                                     <option value="admin">admin</option>
                                     <option value="petugas">petugas</option>
-                                    <option value="pimpinan">pimpinan</option>
+                                    <option value="manager">manager</option>
                                 </select>
                             </td>
                         </tr>
