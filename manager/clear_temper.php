@@ -29,7 +29,7 @@
 
             <?php include('../alert.php'); ?>
 
-            <!-- <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Tambah Petugas</button> -->
+            <a href="clear_temper_rekap.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Rekap</a>            
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>

@@ -20,7 +20,7 @@
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
-                            <td><input class="form-control" type="text" name="tgl_permintaan" value="" required></td>
+                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" required></td>
                         </tr>
                         <tr>
                             <td>Nama Pelapor</td>

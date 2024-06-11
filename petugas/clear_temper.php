@@ -30,8 +30,7 @@
 
             <?php include('../alert.php'); ?>
 
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Permintaan Clear Tamper</button>
-            
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Permintaan Clear Tamper</button>            
             <?php include('clear_temper_modal_tambah.php') ?>
             <table id="tabel_js" class="table table-hover">
                 <thead>
@@ -66,12 +65,13 @@
 
                 $no=1;
                 while ($d = mysqli_fetch_array($data)) {
+                
 
                 ?>
                 
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $d['tgl_permintaan'] ?></td>
+                        <td><?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
                         <td><?= $d['nama_petugas'] ?></td>
                         <td><?= $d['no_kwh'] ?></td>
                         <td>

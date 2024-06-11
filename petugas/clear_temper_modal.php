@@ -14,7 +14,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
+                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
