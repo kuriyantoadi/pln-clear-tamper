@@ -45,3 +45,13 @@ if ($cek_edit) {
 }else {
     header("location:clear_temper.php?pesan=update_clear_temper_berhasil");
 }
+?>
+
+<!-- <script>
+function confirmDownload() {
+    var result = confirm("Apakah Anda yakin ingin mengunduh data?");
+    if (result) {
+        window.location.href = 'clear_temper_export.php';
+    }
+}
+</script> -->

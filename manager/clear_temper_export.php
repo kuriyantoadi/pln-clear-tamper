@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?php 
+session_start();
+if ($_SESSION['status'] != "manager") {
+    header("location:login.php?pesan=belum_login");
+}
+?>
+
 	<title>Export Data Ke Excel</title>
-</head>
 <body>
 	<style type="text/css">
 	body{
@@ -16,26 +19,41 @@
 	table td{
 		border: 1px solid #3c3c3c;
 		padding: 3px 8px;
-
 	}
-	a{
-		background: blue;
-		color: #fff;
-		padding: 8px 10px;
-        border-radius: 20px;
+	.back {
 		text-decoration: none;
-		border-radius: 2px;
+		color: white;
+		background: red;
+		border-radius: 10px;
+		padding: 8px 10px;
+		margin: 10px;
+	}
+	.export {
+		text-decoration: none;
+		color: white;
+		background: blue;
+		border-radius: 10px;
+		padding: 8px 10px;
 	}
 	</style>
-    
-    <?php 
-        header("Content-type: application/vnd-ms-excel");
-        header("Content-Disposition: attachment; filename=Data Pegawai.xls");
-    ?>
+<?php 
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+?>
+	<!-- <br>
+	<a class="back" href="clear_temper.php">KEMBALI</a>
 
+	<center>
+		<h1>Export Data Ke Excel</h1>
+	</center>
 
-	<table>
-		<tr>
+	<center>
+		<a class="export" href="">EXPORT SETING</a>
+		<a class="export" href="clear_temper_export.php">EXPORT KE EXCEL</a>
+	</center> -->
+
+	<table id="tabel_js" class="table table-primary">
+        <thead>
             <th>No</th>
             <th>Bondg</th>
             <th>Tanggal Permintaan</th>
@@ -48,10 +66,10 @@
             <th>Id User</th>
             <th>Clear Temper</th>
             <th>Status Permintaan</th>
-		</tr>
+		</thead>
 		<?php 
 		// koneksi database
-		$koneksi = mysqli_connect("localhost","root","","pln_clear_tamper");
+        include('../koneksi.php');
 
 		// menampilkan data pegawai
 		$data = mysqli_query($koneksi,"select * from tb_clear_temper");
@@ -61,7 +79,7 @@
 		<tr>
 			<td><?php echo $no++; ?></td>
 			<td><?php echo $d['bondg']; ?></td>
-            <td><?php echo $d['tgl_permintaan']; ?></td>
+            <td><?php echo date('d M Y', strtotime($d['tgl_permintaan'])); ?></td>
             <td><?php echo $d['nama_pelapor']; ?></td>
             <td><?php echo $d['alamat']; ?></td>
             <td><?php echo $d['no_hp']; ?></td>
@@ -77,4 +95,3 @@
 		?>
 	</table>
 </body>
-</html>

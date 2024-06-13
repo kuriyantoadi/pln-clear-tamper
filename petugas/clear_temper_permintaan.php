@@ -15,7 +15,6 @@ $tgl_permintaan = mysqli_real_escape_string($koneksi, $_POST['tgl_permintaan']);
 $nama_pelapor = mysqli_real_escape_string($koneksi, $_POST['nama_pelapor']);
 $alamat = mysqli_real_escape_string($koneksi, $_POST['alamat']);
 $no_hp = mysqli_real_escape_string($koneksi, $_POST['no_hp']);
-$id_pelanggan = mysqli_real_escape_string($koneksi, $_POST['id_pelanggan']);
 $no_kwh = mysqli_real_escape_string($koneksi, $_POST['no_kwh']);
 $indikasi = mysqli_real_escape_string($koneksi, $_POST['indikasi']);
 
@@ -37,7 +36,6 @@ $query = "INSERT INTO tb_clear_temper VALUES (
                         '$nama_pelapor', 
                         '$alamat', 
                         '$no_hp',
-                        '$id_pelanggan',
                         '$no_kwh', 
                         '$indikasi', 
                         '$photo_kwh', 

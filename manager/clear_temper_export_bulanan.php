@@ -36,18 +36,10 @@ if ($_SESSION['status'] != "manager") {
 		padding: 8px 10px;
 	}
 	</style>
-
-	<br>
-	<a class="back" href="clear_temper.php">KEMBALI</a>
-
-	<center>
-		<h1>Export Data Ke Excel</h1>
-	</center>
-
-	<center>
-		<a class="export" href="">EXPORT SETING</a>
-		<a class="export" href="clear_temper_export.php">EXPORT KE EXCEL</a>
-	</center>
+<?php 
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+?>
 
 	<table id="tabel_js" class="table table-primary">
         <thead>
@@ -66,17 +58,21 @@ if ($_SESSION['status'] != "manager") {
 		</thead>
 		<?php 
 		// koneksi database
-		$koneksi = mysqli_connect("localhost","root","","pln_clear_tamper");
+        include('../koneksi.php');
+		$bulan = htmlspecialchars($_POST['bulan']);
+		$tahun = htmlspecialchars($_POST['tahun']);
 
 		// menampilkan data pegawai
-		$data = mysqli_query($koneksi,"select * from tb_clear_temper");
+		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
+										WHERE MONTH(`tgl_permintaan`) = $bulan 
+										AND YEAR(`tgl_permintaan`) = $tahun;");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
 		?>
 		<tr>
 			<td><?php echo $no++; ?></td>
 			<td><?php echo $d['bondg']; ?></td>
-            <td><?php echo date('d M Y', strtotime($d['tgl_permintaan'])); ?></td>
+            <td><?php echo date('d M y', strtotime($d['tgl_permintaan'])); ?></td>
             <td><?php echo $d['nama_pelapor']; ?></td>
             <td><?php echo $d['alamat']; ?></td>
             <td><?php echo $d['no_hp']; ?></td>

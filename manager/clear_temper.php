@@ -29,7 +29,8 @@
 
             <?php include('../alert.php'); ?>
 
-            <a href="clear_temper_rekap.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Rekap</a>            
+            <!-- <a href="clear_temper_rekap.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Rekap</a>             -->
+            <a href="clear_temper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>            
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>
