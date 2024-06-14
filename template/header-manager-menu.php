@@ -31,6 +31,12 @@
                                 Permintaan Clear Tamper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
+
+                            <a class="nav-link collapsed" href="clear_temper_rekap_bulanan.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="file-plus"></i></div>
+                                Rekap Bulanan Clear Temper
+                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
+                            </a>
                         </div>
                     </div>
 
