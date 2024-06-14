@@ -33,12 +33,8 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelangan</th>
-                        <td>: <?= htmlspecialchars($d['id_pelanggan']) ?></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor Meter</th>
-                        <td>: <?= htmlspecialchars($d['no_meter']) ?></td>
+                        <th>Nomor KWH</th>
+                        <td>: <?= htmlspecialchars($d['no_kwh']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
@@ -49,8 +45,8 @@
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Kode Temper</th>
-                        <td>: <?= htmlspecialchars($d['kode_temper']) ?></td>
+                        <th>Clear Temper</th>
+                        <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
                     </tr>
                      <tr>
                         <th>Status Permintaan</th>
@@ -111,25 +107,21 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelangan</th>
-                        <td>: <?= htmlspecialchars($d['id_pelanggan']) ?></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor Meter</th>
-                        <td>: <?= htmlspecialchars($d['no_meter']) ?></td>
+                        <th>Nomor KWH</th>
+                        <td>: <?= htmlspecialchars($d['no_kwh']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>id_user</th>
                         <td>: <?= htmlspecialchars($d['id_user']) ?></td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                        <th>Kode Temper</th>
+                        <th>Clear Temper</th>
                         <td>
-                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" required>
+                            <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" required>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                         </td>
                     </tr>
@@ -152,7 +144,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Tamper</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Temper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -178,11 +170,11 @@
                             <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" required></td>
                         </tr>
                         <tr>
-                            <td>tgl_permintaan</td>
-                            <td><input class="form-control" type="text" name="tgl_permintaan" value="<?= htmlspecialchars($d['tgl_permintaan'])?>" required></td>
+                            <td>Tanggal Permintaan</td>
+                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" required></td>
                         </tr>
                         <tr>
-                            <td>nama_pelapor</td>
+                            <td>Nama Pelapor</td>
                             <td><input class="form-control" type="text" name="nama_pelapor" value="<?= htmlspecialchars($d['nama_pelapor'])?>" required></td>
                         </tr>
                         <tr>
@@ -194,21 +186,17 @@
                             <td><input class="form-control" type="text" name="no_hp" value="<?= htmlspecialchars($d['no_hp'])?>" required></td>
                         </tr>
                         <tr>
-                            <td>Id Pelangan</td>
-                            <td><input class="form-control" type="text" name="id_pelanggan" value="<?= htmlspecialchars($d['id_pelanggan'])?>" required></td>
-                        </tr>
-                        <tr>
-                            <td>No Meter</td>
-                            <td><input class="form-control" type="text" name="no_meter" value="<?= htmlspecialchars($d['no_meter'])?>" required></td>
+                            <td>No KWH</td>
+                            <td><input class="form-control" type="text" name="no_kwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
                             <td><input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required></td>
                         </tr>                                           
                         <tr>
-                            <td>Kode Tamper</td>
+                            <td>Clear Tamper</td>
                             <td>
-                            <input type="text" name="kode_temper" class="form-control" value="<?= $d['kode_temper'] ?>" required>
+                            <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" required>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
                             </td>
                 </table>
@@ -273,7 +261,7 @@
                                     <option value="">Pilihan</option>
                                     <option value="admin">admin</option>
                                     <option value="petugas">petugas</option>
-                                    <option value="pimpinan">pimpinan</option>
+                                    <option value="manager">manager</option>
                                 </select>
                             </td>
                         </tr>

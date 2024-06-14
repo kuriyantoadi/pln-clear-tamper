@@ -20,7 +20,7 @@
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
-                            <td><input class="form-control" type="text" name="tgl_permintaan" value="" required></td>
+                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" required></td>
                         </tr>
                         <tr>
                             <td>Nama Pelapor</td>
@@ -35,12 +35,9 @@
                             <td><input class="form-control" type="text" name="no_hp" value="" required></td>
                         </tr>
                         <tr>
-                            <td>Id Pelangan</td>
-                            <td><input class="form-control" type="text" name="id_pelanggan" value="" required></td>
-                        </tr>
                         <tr>
-                            <td>No Meter</td>
-                            <td><input class="form-control" type="text" name="no_meter" value="" required></td>
+                            <td>Nomor KWH</td>
+                            <td><input class="form-control" type="text" name="no_kwh" value="" required></td>
                         </tr>
                        
                         <tr>

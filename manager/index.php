@@ -1,5 +1,5 @@
-<?php include('../template/header-pimpinan.php') ?>
-<?php include('../template/header-pimpinan-menu.php') ?>
+<?php include('../template/header-manager.php') ?>
+<?php include('../template/header-manager-menu.php') ?>
 
 
 <!-- batas konten atas -->
@@ -14,7 +14,7 @@
                             <div class="page-header-icon"><i data-feather="activity"></i></div>
                             Dashboard
                         </h1>
-                        <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai pimpinan</div>
+                        <div class="page-header-subtitle">Terimakasih anda berhasil Login sebagai manager</div>
                     </div>
                    
                 </div>

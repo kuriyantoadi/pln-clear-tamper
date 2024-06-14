@@ -28,9 +28,9 @@ if ($cek > 0) {
     } elseif ($login['status'] == "petugas") {
         $_SESSION['status'] = "petugas";
         header("location:../petugas/index.php");
-    } elseif ($login['status'] == "pimpinan") {
-        $_SESSION['status'] = "pimpinan";
-        header("location:../pimpinan/index.php");
+    } elseif ($login['status'] == "manager") {
+        $_SESSION['status'] = "manager";
+        header("location:../manager/index.php");
     } else {
         header("location:index.php?pesan=gagal1");
     }

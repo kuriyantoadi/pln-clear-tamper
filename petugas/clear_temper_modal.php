@@ -14,7 +14,7 @@
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
+                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -29,19 +29,15 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Nama Pelangan</th>
-                        <td>: <?= htmlspecialchars($d['id_pelanggan']) ?></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor Meter</th>
-                        <td>: <?= htmlspecialchars($d['no_meter']) ?></td>
+                        <th>Clear Temper</th>
+                        <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
                     <tr>
-                        <th>photo_kwh</th>
+                        <th>Photo KWH</th>
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                    
