@@ -8,35 +8,25 @@
                             <!-- Sidenav Menu Heading (Core)-->
                             <div class="sidenav-menu-heading">Core</div>
                             <!-- Sidenav Accordion (Dashboard)-->
-                            
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+
+                            <a class="nav-link collapsed" href="index.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                                Dashboards
+                                Dashboard
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
-
-                            <!-- <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
-                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">
-                                    <a class="nav-link" href="dashboard-1.html">
-                                        Default
-                                        <span class="badge bg-primary-soft text-primary ms-auto">Updated</span>
-                                    </a>
-                                    <a class="nav-link" href="dashboard-2.html">Multipurpose</a>
-                                    <a class="nav-link" href="dashboard-3.html">Affiliate</a>
-                                </nav>
-                            </div> -->
 
                             <a class="nav-link collapsed" href="clear_temper.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="file-plus"></i></div>
-                                Permintaan Clear Tamper
+                                <div class="nav-link-icon"><i data-feather="zap"></i></div>
+                                Clear Temper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
-
-                            <a class="nav-link collapsed" href="clear_temper_rekap_bulanan.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="file-plus"></i></div>
-                                Rekap Bulanan Clear Temper
+                            
+                            <a class="nav-link collapsed" href="clear_temper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="database"></i></div>
+                                Rekap Clear Temper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
+                            
                         </div>
                     </div>
 
