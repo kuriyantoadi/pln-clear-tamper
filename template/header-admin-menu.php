@@ -19,9 +19,15 @@
                                 Clear Temper
                             </a>
 
-                            <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="user"></i></div>
-                                kelola petugas
+                            <a class="nav-link collapsed" href="clear_temper_grafik.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Grafik Clear Temper
+                            </a>
+
+                            <a class="nav-link collapsed" href="clear_temper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="database"></i></div>
+                                Rekap Clear Temper
+                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
 
                             

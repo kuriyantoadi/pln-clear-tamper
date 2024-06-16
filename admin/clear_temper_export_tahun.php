@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION['status'] != "manager") {
+if ($_SESSION['status'] != "admin") {
     header("location:login.php?pesan=belum_login");
 }
 ?>
@@ -37,8 +37,8 @@ if ($_SESSION['status'] != "manager") {
 	}
 	</style>
 <?php 
-    // header("Content-type: application/vnd-ms-excel");
-    // header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
 ?>
 
 	<table id="tabel_js" class="table table-primary">
@@ -59,16 +59,12 @@ if ($_SESSION['status'] != "manager") {
 		<?php 
 		// koneksi database
         include('../koneksi.php');
-		$bulan = htmlspecialchars($_POST['bulan']);
-		$tahun = htmlspecialchars($_POST['tahun']);
 
-		var_dump($bulan);
-		var_dump($tahun);
+		$tahun = htmlspecialchars($_POST['tahun']);
 
 		// menampilkan data pegawai
 		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
-										WHERE MONTH(`tgl_permintaan`) = $bulan 
-										AND YEAR(`tgl_permintaan`) = $tahun;");
+										WHERE YEAR(`tgl_permintaan`) = $tahun;");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
 		?>
