@@ -69,12 +69,14 @@ if ($_SESSION['status'] != "admin") {
 		?>
 		<tr>
 			<td><?php echo $no++; ?></td>
-			<td><?php echo $d['bondg']; ?></td>
-            <td><?php echo date('d M y', strtotime($d['tgl_permintaan'])); ?></td>
+            <td><?php echo $d['bondg']; ?></td>
+            <td><?php echo date('d M Y', strtotime($d['tgl_permintaan'])); ?></td>
             <td><?php echo $d['nama_pelapor']; ?></td>
             <td><?php echo $d['alamat']; ?></td>
-            <td><?php echo $d['no_hp']; ?></td>
-            <td><?php echo $d['no_kwh']; ?></td>
+            <!-- Ensure 'No HP' is treated as text -->
+            <td><?php echo '="' . $d['no_hp'] . '"'; ?></td>
+            <!-- Ensure 'No KWH' is treated as text -->
+            <td><?php echo '="' . $d['no_kwh'] . '"'; ?></td>
             <td><?php echo $d['indikasi']; ?></td>
             <td><?php echo $d['photo_kwh']; ?></td>
             <td><?php echo $d['id_user']; ?></td>

@@ -46,9 +46,7 @@
 				<tr>
 					<td>
 						<form action="clear_temper_export_harian.php" method="post">
-
-						<input type="date" name="tgl_permintaan" >
-
+						<input type="date" name="tgl_permintaan" required>
 						<input type="submit" class="btn btn-primary btn-sm" >
 						</form><br>
 					</td>
