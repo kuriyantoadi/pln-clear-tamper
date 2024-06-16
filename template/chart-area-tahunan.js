@@ -29,23 +29,23 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Area Chart Example
-var ctx = document.getElementById("grafik_bulanan");
+var ctx = document.getElementById("grafik_tahunan");
 var myLineChart = new Chart(ctx, {
     type: "line",
     data: {
         labels: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
         ],
         datasets: [{
             label: "Earnings",
@@ -59,17 +59,17 @@ var myLineChart = new Chart(ctx, {
             pointHoverBackgroundColor: "rgba(0, 97, 242, 1)",
             pointHoverBorderColor: "rgba(0, 97, 242, 1)",
             pointHitRadius: 10,
-            pointBorderWidth: 1,
+            pointBorderWidth: 2,
             data: [
                 0,
-                10,
+                10 ,
                 5,
                 15,
                 10,
                 20,
                 15,
-                0,
-                0,
+                25,
+                20,
                 30,
                 25,
                 40
@@ -96,7 +96,7 @@ var myLineChart = new Chart(ctx, {
                     drawBorder: false
                 },
                 ticks: {
-                    maxTicksLimit: 12
+                    maxTicksLimit: 7
                 }
             }],
             yAxes: [{

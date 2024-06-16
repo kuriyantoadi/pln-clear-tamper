@@ -34,7 +34,7 @@
                                                
                             <div class="card-header">Grafik Harian</div>
                             <div class="card-body">
-                                <div class="chart-area"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                                <div class="chart-area"><canvas id="grafik_harian" width="100%" height="30"></canvas></div>
                             </div>
                             <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->                      
 
@@ -74,7 +74,7 @@
                                                
                             <div class="card-header">Grafik Tahunan</div>
                             <div class="card-body">
-                                <div class="chart-area"><canvas id="myAreaChart1" width="100%" height="30"></canvas></div>
+                                <div class="chart-area"><canvas id="grafik_tahunan" width="100%" height="30"></canvas></div>
                             </div>
                             <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->                      
 
@@ -88,4 +88,6 @@
     </div>
 </main>
 <?php include('../template/footer.php') ?>
+<script src="../template/chart-area-harian.js"></script>
 <script src="../template/chart-area-bulanan.js"></script>
+<script src="../template/chart-area-tahunan.js"></script>
