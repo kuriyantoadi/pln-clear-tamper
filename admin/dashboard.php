@@ -43,27 +43,6 @@
                 </div>
             </div>
 
-            <div class="col-xxl-6 col-xl-12 mb-4">
-                <div class="card h-100">
-                    <div class="card-body h-100 p-5">
-                        <div class="row align-items-center">
-                            <div class="col-xl-8 col-xxl-12">
-                                <div class="text-center text-xl-start text-xxl-center mb-4 mb-xl-0 mb-xxl-4">
-                                    <h1 class="text-primary">PLN Clear Tamper ULP Pandeglang</h1>
-                                    
-                                      <div class="card-header">Area Chart Example</div>
-                                        <div class="card-body">
-                                            <div class="chart-area"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                                        </div>
-                                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </main>
