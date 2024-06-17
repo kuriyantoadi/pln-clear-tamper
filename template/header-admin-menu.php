@@ -19,10 +19,22 @@
                                 Clear Temper
                             </a>
 
-                            <a class="nav-link collapsed" href="clear_temper_grafik.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <!-- <a class="nav-link collapsed" href="clear_temper_grafik.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Grafik Clear Temper
+                            </a> -->
+
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                Grafik Clear Temper
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+                            <div class="collapse" id="collapseDashboards" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPages">                                    
+                                    <a class="nav-link" href="clear_temper_grafik_harian.php">Harian</a>
+                                    <a class="nav-link" href="clear_temper_grafik_bulanan.php">Bulanan</a>
+                                </nav>
+                            </div>                            
 
                             <a class="nav-link collapsed" href="clear_temper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="database"></i></div>
