@@ -12,7 +12,7 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="database"></i></div>
-                             Rekap Clear Tamper
+                            Rekap Clear Tamper
                         </h1>
                         <div class="page-header-subtitle">Halaman Rekap Clear Tamper</div>
                     </div>
@@ -37,7 +37,7 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="clear_tamper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>
+						<a href="clear_tamper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a><br><br>
 					</td>
 				</tr>
 				<tr>
@@ -71,7 +71,7 @@
 							<option value="09">September</option>
 							<option value="10">Oktober</option>
 							<option value="11">November</option>
-							<option value="11">Desember</option>
+							<option value="12">Desember</option>
 						</select>
 						Tahun
 						<select name="tahun" id="">
