@@ -17,13 +17,13 @@
 
                             <a class="nav-link collapsed" href="clear_temper.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="zap"></i></div>
-                                Clear Temper
+                                Clear Tamper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
                             
                             <a class="nav-link collapsed" href="clear_temper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="database"></i></div>
-                                Rekap Clear Temper
+                                Rekap Clear Tamper
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
                             

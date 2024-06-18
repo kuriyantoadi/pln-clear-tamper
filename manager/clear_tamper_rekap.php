@@ -12,9 +12,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="database"></i></div>
-                             Rekap Clear Temper
+                             Rekap Clear Tamper
                         </h1>
-                        <div class="page-header-subtitle">Halaman Rekap Clear Temper</div>
+                        <div class="page-header-subtitle">Halaman Rekap Clear Tamper</div>
                     </div>
                 </div>
             </div>
@@ -24,12 +24,12 @@
 
 <div class="container-xl px-4 mt-n10">
     <div class="card mb-4">
-        <div class="card-header">Menu Rekap Clear Temper</div>
+        <div class="card-header">Menu Rekap Clear Tamper</div>
         <div class="card-body">
 
             <?php include('../alert.php'); ?>
 
-			<p style="text-align: justify;">Selamat datang di halaman unduhan rekap Clear Temper! Di sini, Anda dapat mengakses laporan lengkap yang mencakup data harian, bulanan, dan tahunan. Laporan ini dirancang untuk memberikan wawasan mendalam tentang aktivitas dan performa Clear Temper, membantu Anda dalam analisis dan pengambilan keputusan yang lebih baik.</p>
+			<p style="text-align: justify;">Selamat datang di halaman unduhan rekap Clear Tamper! Di sini, Anda dapat mengakses laporan lengkap yang mencakup data harian, bulanan, dan tahunan. Laporan ini dirancang untuk memberikan wawasan mendalam tentang aktivitas dan performa Clear Tamper, membantu Anda dalam analisis dan pengambilan keputusan yang lebih baik.</p>
 
 			<table class="">
 				<tr>

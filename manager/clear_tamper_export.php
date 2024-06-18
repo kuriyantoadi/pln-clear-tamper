@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION['status'] != "admin") {
+if ($_SESSION['status'] != "manager") {
     header("location:login.php?pesan=belum_login");
 }
 ?>
@@ -37,9 +37,20 @@ if ($_SESSION['status'] != "admin") {
 	}
 	</style>
 <?php 
-    // header("Content-type: application/vnd-ms-excel");
-    // header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
 ?>
+	<!-- <br>
+	<a class="back" href="clear_temper.php">KEMBALI</a>
+
+	<center>
+		<h1>Export Data Ke Excel</h1>
+	</center>
+
+	<center>
+		<a class="export" href="">EXPORT SETING</a>
+		<a class="export" href="clear_temper_export.php">EXPORT KE EXCEL</a>
+	</center> -->
 
 	<table id="tabel_js" class="table table-primary">
         <thead>
@@ -53,22 +64,15 @@ if ($_SESSION['status'] != "admin") {
             <th>Indikasi</th>
             <th>Photo KWH</th>
             <th>Id User</th>
-            <th>Clear Temper</th>
+            <th>Clear Tamper</th>
             <th>Status Permintaan</th>
 		</thead>
 		<?php 
 		// koneksi database
         include('../koneksi.php');
-		$bulan = htmlspecialchars($_POST['bulan']);
-		$tahun = htmlspecialchars($_POST['tahun']);
-
-		var_dump($bulan);
-		var_dump($tahun);
 
 		// menampilkan data pegawai
-		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
-										WHERE MONTH(`tgl_permintaan`) = $bulan 
-										AND YEAR(`tgl_permintaan`) = $tahun;");
+		$data = mysqli_query($koneksi,"select * from tb_clear_temper");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
 		?>

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalXl">Detail Pengajuan Clear Temper</h5>
+                <h5 class="modal-title" id="exampleModalXl">Detail Pengajuan Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -29,7 +29,7 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                        <th>Clear Temper</th>
+                        <th>Clear Tamper</th>
                         <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
                     </tr>
                     <tr>

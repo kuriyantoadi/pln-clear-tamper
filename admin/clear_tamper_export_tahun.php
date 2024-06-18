@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION['status'] != "manager") {
+if ($_SESSION['status'] != "admin") {
     header("location:login.php?pesan=belum_login");
 }
 ?>
@@ -53,7 +53,7 @@ if ($_SESSION['status'] != "manager") {
             <th>Indikasi</th>
             <th>Photo KWH</th>
             <th>Id User</th>
-            <th>Clear Temper</th>
+            <th>Clear Tamper</th>
             <th>Status Permintaan</th>
 		</thead>
 		<?php 

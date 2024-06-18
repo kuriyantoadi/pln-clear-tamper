@@ -67,7 +67,7 @@ header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
                 <th>Indikasi</th>
                 <th>Photo KWH</th>
                 <th>Id User</th>
-                <th>Clear Temper</th>
+                <th>Clear Tamper</th>
                 <th>Status Permintaan</th>
             </tr>
         </thead>

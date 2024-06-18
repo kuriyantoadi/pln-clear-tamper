@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalXl">Detail Pengajuan Clear Temper</h5>
+                <h5 class="modal-title" id="exampleModalXl">Detail Pengajuan Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -45,7 +45,7 @@
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
-                        <th>Clear Temper</th>
+                        <th>Clear Tamper</th>
                         <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
                     </tr>
                      <tr>
@@ -71,12 +71,12 @@
 </div>
 <!-- Modal Detail Akhir -->
 
-<!-- Modal Kirim Temper Awal-->
+<!-- Modal Kirim Tamper Awal-->
 <div class="modal fade" id="kirim_temper<?php echo $d['id_clear_temper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalXl">Kirim Kode Clear Temper</h5>
+                <h5 class="modal-title" id="exampleModalXl">Kirim Kode Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -119,7 +119,7 @@
                         <td>: <?= htmlspecialchars($d['id_user']) ?></td>
                     </tr> -->
                     <tr>
-                        <th>Clear Temper</th>
+                        <th>Clear Tamper</th>
                         <td>
                             <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" required>
                             <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
@@ -136,7 +136,7 @@
         </div>
     </div>
 </div>
-<!-- Modal Kirim Temper Akhir -->
+<!-- Modal Kirim Tamper Akhir -->
 
 
 <!-- Modal Edit Awal-->
@@ -144,7 +144,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Temper</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

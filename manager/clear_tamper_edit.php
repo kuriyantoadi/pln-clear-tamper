@@ -17,9 +17,9 @@ $indikasi = htmlspecialchars($_POST['indikasi']);
 $clear_temper = htmlspecialchars($_POST['clear_temper']);
 $id_user = htmlspecialchars($_POST['id_user']);
 
-if($clear_temper == NULL){ // jika kode temper kosong
+if($clear_temper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';
-}elseif(!empty($clear_temper)){ // jika kode temper tidak kosong
+}elseif(!empty($clear_temper)){ // jika kode tamper tidak kosong
     $status_permintaan = 'terkirim';
 }else{
     $status_permintaan = '';

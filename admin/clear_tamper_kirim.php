@@ -9,9 +9,9 @@ include '../koneksi.php';
 $id_clear_temper = htmlspecialchars($_POST['id_clear_temper']);
 $clear_temper = htmlspecialchars($_POST['clear_temper']);
 
-if($clear_temper == NULL){ // jika kode temper kosong
+if($clear_temper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';
-}elseif(!empty($clear_temper)){ // jika kode temper tidak kosong
+}elseif(!empty($clear_temper)){ // jika kode tamper tidak kosong
     $status_permintaan = 'terkirim';
 }else{
     $status_permintaan = '';
