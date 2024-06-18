@@ -25,11 +25,11 @@ if(!$photo_kwh) {
 }
 
 $id_user = mysqli_real_escape_string($koneksi, $_POST['id_user']);
-$kode_temper = '';
+$kode_tamper = '';
 $status_permintaan = 'proses';
 
 // Insert data into the database
-$query = "INSERT INTO tb_clear_temper VALUES (
+$query = "INSERT INTO tb_clear_tamper VALUES (
                         '',
                         '$bondg', 
                         '$tgl_permintaan', 
@@ -40,14 +40,14 @@ $query = "INSERT INTO tb_clear_temper VALUES (
                         '$indikasi', 
                         '$photo_kwh', 
                         '$id_user', 
-                        '$kode_temper', 
+                        '$kode_tamper', 
                         '$status_permintaan')";
 
 $cek_tambah = mysqli_query($koneksi, $query);
 
 // Check if the query was successful
 if ($cek_tambah) {
-    header("Location: clear_temper.php?pesan=tambah_berhasil");
+    header("Location: clear_tamper.php?pesan=tambah_berhasil");
 } else {
     echo "Error: " . mysqli_error($koneksi);
 }
@@ -65,7 +65,7 @@ function upload() {
     if (!in_array($extentionGambar, $extentionGambarValid)) {
         echo "<script>
                     alert('Ini bukan gambar woi!');
-                    window.location.href = 'clear_temper.php?pesan=tambah_gagal';
+                    window.location.href = 'clear_tamper.php?pesan=tambah_gagal';
               </script>";
         
         return false;

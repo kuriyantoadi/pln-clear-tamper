@@ -46,7 +46,7 @@
                <?php
                 include '../koneksi.php';
                 $no = 1;
-                $data = mysqli_query($koneksi, "SELECT * from tb_clear_temper");
+                $data = mysqli_query($koneksi, "SELECT * from tb_clear_tamper");
                 while ($d = mysqli_fetch_array($data)) {
                 ?>
                 

@@ -85,7 +85,7 @@
     for ($i = 1; $i <= 12; $i++) {
         $month = str_pad($i, 2, '0', STR_PAD_LEFT);
         $query = "SELECT COUNT(*) AS jumlah_data
-                  FROM tb_clear_temper
+                  FROM tb_clear_tamper
                   WHERE tgl_permintaan LIKE '2024-$month%'";
         $result = mysqli_query($koneksi, $query);
         $row = mysqli_fetch_assoc($result);
@@ -223,7 +223,7 @@
     for ($i = 1; $i <= 12; $i++) {
         $month = str_pad($i, 2, '0', STR_PAD_LEFT);
         $query = "SELECT COUNT(*) AS jumlah_data
-                  FROM tb_clear_temper
+                  FROM tb_clear_tamper
                   WHERE tgl_permintaan LIKE '2024-$month%'";
         $result = mysqli_query($koneksi, $query);
         $row = mysqli_fetch_assoc($result);

@@ -3,6 +3,26 @@ session_start();
 if ($_SESSION['status'] != "admin") {
     header("location:login.php?pesan=belum_login");
 }
+
+		// koneksi database
+        include('../koneksi.php');
+		$tgl_permintaan = htmlspecialchars($_POST['tgl_permintaan']);
+
+		if (empty($tgl_permintaan) || !preg_match("/^\d{4}-\d{2}-\d{2}$/", $tgl_permintaan)) {
+			echo "<script>alert('Bulan tidak valid'); window.history.back();</script>";
+			exit();
+		}
+
+		// Query untuk memeriksa data berdasarkan tahun
+		$cek_data = mysqli_query($koneksi, "SELECT * FROM `tb_clear_tamper` 
+											WHERE `tgl_permintaan`='$tgl_permintaan' ");
+
+		// Periksa jumlah baris hasil query
+		if (mysqli_num_rows($cek_data) == 0) {
+			echo "<script>alert('Data Clear Tamper Kosong'); window.history.back();</script>";
+			exit();
+		} 
+
 ?>
 
 	<title>Export Data Ke Excel</title>
@@ -62,7 +82,7 @@ if ($_SESSION['status'] != "admin") {
 		$tgl_permintaan = htmlspecialchars($_POST['tgl_permintaan']);
 
 		// menampilkan data pegawai
-		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
+		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_tamper` 
 										WHERE `tgl_permintaan`='$tgl_permintaan' ");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
@@ -80,7 +100,7 @@ if ($_SESSION['status'] != "admin") {
             <td><?php echo $d['indikasi']; ?></td>
             <td><?php echo $d['photo_kwh']; ?></td>
             <td><?php echo $d['id_user']; ?></td>
-            <td><?php echo $d['clear_temper']; ?></td>
+            <td><?php echo $d['clear_tamper']; ?></td>
             <td><?php echo $d['status_permintaan']; ?></td>
 		</tr>
 		<?php 

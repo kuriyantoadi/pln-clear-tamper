@@ -2,8 +2,29 @@
 session_start();
 if ($_SESSION['status'] != "admin") {
     header("location:login.php?pesan=belum_login");
+    exit();
 }
+
+include('../koneksi.php');
+
+// Ambil nilai tahun dari POST dan validasi
+$tahun = htmlspecialchars($_POST['tahun']);
+
+if (empty($tahun) || !is_numeric($tahun)) {
+    echo "<script>alert('Tahun tidak valid'); window.history.back();</script>";
+    exit();
+}
+
+// Query untuk memeriksa data berdasarkan tahun
+$cek_data = mysqli_query($koneksi, "SELECT * FROM `tb_clear_tamper` WHERE YEAR(`tgl_permintaan`) = $tahun");
+
+// Periksa jumlah baris hasil query
+if (mysqli_num_rows($cek_data) == 0) {
+    echo "<script>alert('Data Clear Tamper Kosong'); window.history.back();</script>";
+	exit();
+} 
 ?>
+
 
 	<title>Export Data Ke Excel</title>
 <body>
@@ -58,12 +79,10 @@ if ($_SESSION['status'] != "admin") {
 		</thead>
 		<?php 
 		// koneksi database
-        include('../koneksi.php');
 
 		$tahun = htmlspecialchars($_POST['tahun']);
-
 		// menampilkan data pegawai
-		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
+		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_tamper` 
 										WHERE YEAR(`tgl_permintaan`) = $tahun;");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
@@ -81,11 +100,11 @@ if ($_SESSION['status'] != "admin") {
             <td><?php echo $d['indikasi']; ?></td>
             <td><?php echo $d['photo_kwh']; ?></td>
             <td><?php echo $d['id_user']; ?></td>
-            <td><?php echo $d['clear_temper']; ?></td>
+            <td><?php echo $d['clear_tamper']; ?></td>
             <td><?php echo $d['status_permintaan']; ?></td>
 		</tr>
 		<?php 
 		}
 		?>
 	</table>
-</body>
+</body> 

@@ -29,8 +29,8 @@
 
             <?php include('../alert.php'); ?>
 
-            <!-- <a href="clear_temper_rekap.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Rekap</a>             -->
-            <a href="clear_temper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>            
+            <!-- <a href="clear_tamper_rekap.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Rekap</a>             -->
+            <a href="clear_tamper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>            
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>
@@ -50,9 +50,9 @@
                 // Perform the join query
                 $query = "
                 SELECT * 
-                FROM tb_clear_temper
+                FROM tb_clear_tamper
                 JOIN tb_user 
-                ON tb_clear_temper.id_user = tb_user.id_user;
+                ON tb_clear_tamper.id_user = tb_user.id_user;
                 ";
 
                 $data = mysqli_query($koneksi, $query);
@@ -74,18 +74,18 @@
                         <td><?= $d['nama_petugas'] ?></td>
                         <td><?= $d['no_kwh'] ?></td>
                         <td>
-                            <?php if($d['clear_temper']){ ?>
+                            <?php if($d['clear_tamper']){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['clear_temper'] == NULL){ ?>
+                            <?php }elseif($d['clear_tamper'] == NULL){ ?>
                                 <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
                             <?php } ?> 
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm" href="clear_temper_hapus.php?id_clear_temper=<?php echo $d['id_clear_temper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="edit"></i></button>
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="eye"></i></button>
-                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_temper<?php echo $d['id_clear_temper'] ?>" id=".$d['id_clear_temper']."><i data-feather="unlock"></i></button>
-                            <?php include('clear_temper_modal.php') ?>
+                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper=<?php echo $d['id_clear_tamper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan nomor meter <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="edit"></i></button>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="eye"></i></button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="unlock"></i></button>
+                            <?php include('clear_tamper_modal.php') ?>
                         </td>
                     </tr>
                 

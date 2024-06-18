@@ -43,7 +43,7 @@ header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
     </style>
 </head>
 <body>
-    <!-- <a class="back" href="clear_temper.php">KEMBALI</a>
+    <!-- <a class="back" href="clear_tamper.php">KEMBALI</a>
 
     <center>
         <h1>Export Data Ke Excel</h1>
@@ -51,7 +51,7 @@ header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
 
     <center>
         <a class="export" href="">EXPORT SETING</a>
-        <a class="export" href="clear_temper_export.php">EXPORT KE EXCEL</a>
+        <a class="export" href="clear_tamper_export.php">EXPORT KE EXCEL</a>
     </center> -->
 
     <table id="tabel_js" class="table table-primary">
@@ -77,7 +77,7 @@ header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
         include('../koneksi.php');
 
         // menampilkan data pegawai
-        $data = mysqli_query($koneksi,"SELECT * FROM tb_clear_temper");
+        $data = mysqli_query($koneksi,"SELECT * FROM tb_clear_tamper");
         $no = 1;
         while($d = mysqli_fetch_array($data)){
         ?>
@@ -94,7 +94,7 @@ header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
             <td><?php echo $d['indikasi']; ?></td>
             <td><?php echo $d['photo_kwh']; ?></td>
             <td><?php echo $d['id_user']; ?></td>
-            <td><?php echo $d['clear_temper']; ?></td>
+            <td><?php echo $d['clear_tamper']; ?></td>
             <td><?php echo $d['status_permintaan']; ?></td>
         </tr>
         <?php 
