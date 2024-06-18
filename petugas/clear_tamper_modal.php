@@ -1,5 +1,5 @@
 <!-- Modal Detail Awal-->
-<div class="modal fade" id="detail<?php echo $d['id_clear_temper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="detail<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th>Clear Tamper</th>
-                        <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
+                        <td>: <?= htmlspecialchars($d['clear_tamper']) ?></td>
                     </tr>
                     <tr>
                         <th>Indikasi</th>

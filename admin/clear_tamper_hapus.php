@@ -7,11 +7,11 @@ if ($_SESSION['status'] != "admin") {
 // koneksi database
 include '../koneksi.php';
 
-$id_clear_temper = $_GET['id_clear_temper'];
+$id_clear_tamper = $_GET['id_clear_tamper'];
 // $photo_kwh = $_GET['photo_kwh'];
 
 
-$data = mysqli_query($koneksi, "SELECT * FROM tb_clear_temper where id_clear_temper=$id_clear_temper");
+$data = mysqli_query($koneksi, "SELECT * FROM tb_clear_tamper where id_clear_tamper=$id_clear_tamper");
 while ($d = mysqli_fetch_array($data)) {
     // var_dump($d['photo_kwh']);
     $photo_kwh = $d['photo_kwh'];
@@ -21,10 +21,10 @@ while ($d = mysqli_fetch_array($data)) {
 unlink('../assets/photo_kwh/'.$photo_kwh);
 
 // menghapus data dari database
-$cek_hapus = mysqli_query($koneksi, "delete from tb_clear_temper where id_clear_temper='$id_clear_temper' ");
+$cek_hapus = mysqli_query($koneksi, "delete from tb_clear_tamper where id_clear_tamper='$id_clear_tamper' ");
 
 
 // mengalihkan halaman kembali ke index.php
 if ($cek_hapus) {
-    header("location:clear_temper.php?pesan=hapus_berhasil");
+    header("location:clear_tamper.php?pesan=hapus_berhasil");
 } 

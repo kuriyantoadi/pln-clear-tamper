@@ -155,7 +155,7 @@ var myLineChart = new Chart(ctx, {
             data: [
                 <?php 
                 $c_jan = mysqli_query($koneksi,"SELECT COUNT(*) AS jumlah_data
-                                                FROM tb_clear_temper
+                                                FROM tb_clear_tamper
                                                 WHERE tgl_permintaan LIKE '2024-01%'");
                 echo mysqli_num_rows($c_jan);
                 ?>,

@@ -1,5 +1,5 @@
 <!-- Modal Detail Awal-->
-<div class="modal fade" id="detail<?php echo $d['id_clear_temper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="detail<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <th>Clear Tamper</th>
-                        <td>: <?= htmlspecialchars($d['clear_temper']) ?></td>
+                        <td>: <?= htmlspecialchars($d['clear_tamper']) ?></td>
                     </tr>
                      <tr>
                         <th>Status Permintaan</th>
@@ -72,7 +72,7 @@
 <!-- Modal Detail Akhir -->
 
 <!-- Modal Kirim Tamper Awal-->
-<div class="modal fade" id="kirim_temper<?php echo $d['id_clear_temper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="kirim_tamper<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -80,7 +80,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_temper_kirim.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_kirim.php" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
                     <tr>
                         <th>Nama Petugas</th>
@@ -121,8 +121,8 @@
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" required>
-                            <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
+                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" required>
+                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>
                      
@@ -140,7 +140,7 @@
 
 
 <!-- Modal Edit Awal-->
-<div class="modal fade" id="edit<?php echo $d['id_clear_temper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
@@ -148,7 +148,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_temper_edit.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_edit.php" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                     <tr>
@@ -196,8 +196,8 @@
                         <tr>
                             <td>Clear Tamper</td>
                             <td>
-                            <input type="text" name="clear_temper" class="form-control" value="<?= $d['clear_temper'] ?>" required>
-                            <input type="hidden" name="id_clear_temper" value="<?= $d['id_clear_temper'] ?>">
+                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" required>
+                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                             </td>
                 </table>
 

@@ -8,7 +8,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_temper_permintaan.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_permintaan.php" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table">
                         <tr>

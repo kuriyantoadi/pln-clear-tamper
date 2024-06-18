@@ -37,7 +37,7 @@
 				</tr>
 				<tr>
 					<td>
-						<a href="clear_temper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>
+						<a href="clear_tamper_export.php" class="btn btn-primary btn-sm"><i data-feather="plus"></i> Download Full Rekap</a>
 					</td>
 				</tr>
 				<tr>
@@ -45,7 +45,7 @@
 				</tr>
 				<tr>
 					<td>
-						<form action="clear_temper_export_harian.php" method="post">
+						<form action="clear_tamper_export_harian.php" method="post">
 						<input type="date" name="tgl_permintaan" required>
 						<input type="submit" class="btn btn-primary btn-sm" >
 						</form><br>
@@ -57,7 +57,7 @@
 				</tr>
 				<tr>
 					<td>
-					<form action="clear_temper_export_bulanan.php" method="post">
+					<form action="clear_tamper_export_bulanan.php" method="post">
 						Bulan
 						<select name="bulan" id="">
 							<option value="01">Januari</option>
@@ -93,7 +93,7 @@
 				</tr>
 				<tr>
 					<td>
-						<form action="clear_temper_export_tahun.php" method="post">
+						<form action="clear_tamper_export_tahun.php" method="post">
 							<select name="tahun" id="">
 								<option value="2024">2024</option>
 								<option value="2025">2025</option>

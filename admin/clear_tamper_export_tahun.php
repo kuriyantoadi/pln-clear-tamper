@@ -63,7 +63,7 @@ if ($_SESSION['status'] != "admin") {
 		$tahun = htmlspecialchars($_POST['tahun']);
 
 		// menampilkan data pegawai
-		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_temper` 
+		$data = mysqli_query($koneksi,"SELECT * FROM `tb_clear_tamper` 
 										WHERE YEAR(`tgl_permintaan`) = $tahun;");
 		$no = 1;
 		while($d = mysqli_fetch_array($data)){
@@ -81,7 +81,7 @@ if ($_SESSION['status'] != "admin") {
             <td><?php echo $d['indikasi']; ?></td>
             <td><?php echo $d['photo_kwh']; ?></td>
             <td><?php echo $d['id_user']; ?></td>
-            <td><?php echo $d['clear_temper']; ?></td>
+            <td><?php echo $d['clear_tamper']; ?></td>
             <td><?php echo $d['status_permintaan']; ?></td>
 		</tr>
 		<?php 
