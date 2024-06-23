@@ -19,12 +19,12 @@
                                 Clear Tamper
                             </a>
 
-                            <!-- <a class="nav-link collapsed" href="clear_tamper_grafik.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <a class="nav-link collapsed" href="clear_tamper_grafik_bulanan.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Grafik Clear Tamper
-                            </a> -->
+                            </a>
 
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <!-- <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                                 Grafik Clear Tamper
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -34,7 +34,7 @@
                                     <a class="nav-link" href="clear_tamper_grafik_harian.php">Harian</a>
                                     <a class="nav-link" href="clear_tamper_grafik_bulanan.php">Bulanan</a>
                                 </nav>
-                            </div>                            
+                            </div>                             -->
 
                             <a class="nav-link collapsed" href="clear_tamper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="database"></i></div>

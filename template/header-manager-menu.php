@@ -10,7 +10,7 @@
                             <!-- Sidenav Accordion (Dashboard)-->
 
                             <a class="nav-link collapsed" href="index.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                                <div class="nav-link-icon"><i data-feather="home"></i></div>
                                 Dashboard
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
