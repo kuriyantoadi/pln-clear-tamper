@@ -8,13 +8,13 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_permintaan.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_permintaan.php" method="post" id="formPengajuan" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table">
                         <tr>
                             <td>bondg</td>
                             <td>
-                                <input class="form-control" type="text" name="bondg" value="" required>
+                                <input class="form-control" type="number" name="bondg" value="" id="inputBondg" required>
                                 <input type="hidden" name="id_user" value="<?= $id_user = $_SESSION['id_user']; ?>">
                             </td>
                         </tr>
@@ -32,12 +32,12 @@
                         </tr>
                         <tr>
                             <td>No HP</td>
-                            <td><input class="form-control" type="text" name="no_hp" value="" required></td>
+                            <td><input class="form-control" type="number" name="no_hp" value="" required></td>
                         </tr>
                         <tr>
                         <tr>
                             <td>Nomor KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" value="" required></td>
+                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="" required></td>
                         </tr>
                        
                         <tr>

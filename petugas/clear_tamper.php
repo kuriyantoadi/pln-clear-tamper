@@ -37,7 +37,7 @@
                     <tr>
                         <th>No</th>
                         <th>Tanggal Permintaan</th>
-                        <th>Nama Petugas</th>
+                        <th>Nama Pelapor</th>
                         <th>Nomor KWH</th>
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
@@ -53,7 +53,8 @@
                 SELECT * 
                 FROM tb_clear_tamper
                 JOIN tb_user 
-                ON tb_clear_tamper.id_user = tb_user.id_user;
+                ON tb_clear_tamper.id_user = tb_user.id_user
+                WHERE tb_user.id_user=$id_user;
                 ";
 
                 $data = mysqli_query($koneksi, $query);
@@ -72,7 +73,7 @@
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
-                        <td><?= $d['nama_petugas'] ?></td>
+                        <td><?= $d['nama_pelapor'] ?></td>
                         <td><?= $d['no_kwh'] ?></td>
                         <td>
                             <?php if($d['status_permintaan'] == "terkirim"){ ?>
@@ -98,5 +99,30 @@
     </div>
 
 
+    <script>
+        document.getElementById('formPengajuan').addEventListener('submit', function(event) {
+            const inputBondg = document.getElementById('inputBondg');
+            const inputBondgValue = inputBondg.value;
+
+            const inputNokwh = document.getElementById('inputNokwh');
+            const inputNokwhValue = inputNokwh.value;
+
+            let valid = true;
+
+            if (inputBondgValue.length < 9 || inputBondgValue.length > 12) {
+                alert('Input Bondg harus antara 9 dan 12 karakter.');
+                valid = false;
+            }
+
+            if (inputNokwhValue.length !== 12) {
+                alert('Input No Kwh harus 12 karakter.');
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault(); // Mencegah form dari pengiriman jika ada error
+            }
+        });
+    </script>
 
 <?php include('../template/footer.php') ?>

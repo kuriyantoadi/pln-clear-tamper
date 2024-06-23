@@ -21,6 +21,11 @@ if ($_SESSION['status'] != "manager") {
         <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png" />
         <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+    
+         <!-- JS simple chart -->
+        <script type="text/javascript" src="../assets/chartjs/Chart.js"></script>
+
+    
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">

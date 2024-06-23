@@ -17,7 +17,13 @@
 
                             <a class="nav-link collapsed" href="clear_tamper.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="file-plus"></i></div>
-                                Permintaan Clear Tamper
+                                Clear Tamper
+                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
+                            </a>
+
+                             <a class="nav-link collapsed" href="clear_tamper_regu.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="file-text"></i></div>
+                                Clear Tamper Regu
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
                         </div>

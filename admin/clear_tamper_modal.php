@@ -80,7 +80,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_kirim.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_kirim.php" id="formInputClearTamper" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
                     <tr>
                         <th>Nama Petugas</th>
@@ -121,7 +121,7 @@
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" required>
+                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
                             <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>
@@ -148,7 +148,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_edit.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                     <tr>
@@ -167,7 +167,7 @@
                         </tr>
                     <tr>
                             <td>bondg</td>
-                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" required></td>
+                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" id="inputBondg" required></td>
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
@@ -187,18 +187,16 @@
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
+                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
-                            <td><input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required></td>
-                        </tr>                                           
-                        <tr>
-                            <td>Clear Tamper</td>
                             <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" required>
-                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
+                                <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
+                                <input type="hidden" name="id_clear_tamper" class="form-control" value="<?= $d['id_clear_tamper'] ?>" required>
                             </td>
+                        </tr>                                           
+                        
                 </table>
 
 

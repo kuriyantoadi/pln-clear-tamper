@@ -30,7 +30,7 @@ $status_permintaan = 'proses';
 
 // Insert data into the database
 $query = "INSERT INTO tb_clear_tamper VALUES (
-                        NULL,
+                        '',
                         '$bondg', 
                         '$tgl_permintaan', 
                         '$nama_pelapor', 
@@ -77,7 +77,7 @@ function upload() {
     // cek jika ukuranya terlalu besar
     if ($ukuranFile > 1000000) {
         echo "<script>
-                    alert('Mohon maaf ukuran gambar terlalu besar');
+                    alert('Ukuran gambarnya kegedean woi!');
               </script>";
         return false;
     }

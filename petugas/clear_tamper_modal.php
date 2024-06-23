@@ -27,11 +27,7 @@
                     <tr>
                         <th>No Hp</th>
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
-                    </tr>
-                    <tr>
-                        <th>Clear Tamper</th>
-                        <td>: <?= htmlspecialchars($d['clear_tamper']) ?></td>
-                    </tr>
+                    </tr>                   
                     <tr>
                         <th>Indikasi</th>
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
@@ -50,6 +46,16 @@
                                 <div class="badge bg-warning text-white rounded-pill">Proses</div>
                             <?php } ?>
                        </td>
+                    </tr>
+                     <tr>
+                        <th>Kode Clear Tamper</th>
+                        <td>: 
+                            <?php if($d['clear_tamper'] == NULL){ ?>
+                                    <div class="badge bg-warning text-white rounded-pill">Proses</div>
+                            <?php }else{ 
+                               echo $d['clear_tamper'];
+                             } ?>
+                        </td>
                     </tr>
                 </table>
             </div>

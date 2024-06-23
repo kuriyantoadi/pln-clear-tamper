@@ -106,5 +106,45 @@
     </div>
 
 
+    <script>
+        // input clear tamper
+        document.getElementById('formInputClearTamper').addEventListener('submit', function(event) {
+            const inputClearTamper = document.getElementById('inputClearTamper');
+            const inputValue = inputClearTamper.value;
+
+            if (inputValue.length !== 20) {
+                alert('Input Clear Tamper harus tepat 20 karakter.');
+                event.preventDefault(); // Mencegah form dari pengiriman
+            }
+        });
+    </script>
+
+    <script>
+        document.getElementById('formEditClearTamper').addEventListener('submit', function(event) {
+            const inputBondg = document.getElementById('inputBondg');
+            const inputBondgValue = inputBondg.value;
+
+            const inputNokwh = document.getElementById('inputNokwh');
+            const inputNokwhValue = inputNokwh.value;
+
+            let valid = true;
+
+            if (inputBondgValue.length < 9 || inputBondgValue.length > 12) {
+                alert('Input Bondg harus antara 9 dan 12 karakter.');
+                valid = false;
+            }
+
+            if (inputNokwhValue.length !== 12) {
+                alert('Input No Kwh harus 12 karakter.');
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault(); // Mencegah form dari pengiriman jika ada error
+            }
+        });
+    </script>
+
+
 
 <?php include('../template/footer.php') ?>

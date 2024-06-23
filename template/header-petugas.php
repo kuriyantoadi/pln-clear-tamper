@@ -63,6 +63,7 @@ if ($_SESSION['status'] != "petugas") {
                             <img class="dropdown-user-img" src="../assets/assets/img/illustrations/profiles/profile-1.png" />
                             
                             <?php $username = $_SESSION['username']; ?>
+                            <?php $id_user = $_SESSION['id_user']; ?>
                             <div class="dropdown-user-details">
                                 <div class="dropdown-user-details-name"><?= $username ?></div>
                             </div>
