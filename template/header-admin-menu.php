@@ -34,7 +34,7 @@
                                     <a class="nav-link" href="clear_tamper_grafik_harian.php">Harian</a>
                                     <a class="nav-link" href="clear_tamper_grafik_bulanan.php">Bulanan</a>
                                 </nav>
-                            </div>                             -->
+                            </div>                            -->
 
                             <a class="nav-link collapsed" href="clear_tamper_rekap.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="database"></i></div>
@@ -42,7 +42,13 @@
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
 
-                             <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                            <a class="nav-link collapsed" href="clear_tamper_regu.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i data-feather="file-text"></i></div>
+                                Clear Tamper Regu
+                                <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
+                            </a>
+
+                            <a class="nav-link collapsed" href="kelola_petugas.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="user"></i></div>
                                 Kelola Petugas
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
