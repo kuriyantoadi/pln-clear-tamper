@@ -25,8 +25,12 @@
                         <td>: <?= htmlspecialchars($d['jabatan']) ?></td>
                     </tr>
                     <tr>
-                        <th>Wilayah Kerja</th>
-                        <td>: <?= htmlspecialchars($d['wilker']) ?></td>
+                        <th>Nama Regu</th> 
+                        <?php 
+                        $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='$d[id_regu]'");
+                            while ($d_regu = mysqli_fetch_array($data_regu)) { ?>
+                        <td>: <?= htmlspecialchars($d_regu['nama_regu']) ?></td>
+                        <?php } ?>
                     </tr>
                 </table>
             </div>
@@ -69,8 +73,23 @@
                             <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan']) ?>" required></td>
                         </tr>
                         <tr>
-                            <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="<?= htmlspecialchars($d['wilker']) ?>" required></td>
+                            <td>Regu</td>
+                            <td>
+                            <select name="id_regu" id="" class="form-control" required>
+                            <?php     
+                            $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='{$d['id_regu']}'");
+                            while ($d_regu = mysqli_fetch_array($data_regu)) { 
+                                ?>
+                            <option value="<?= $d_regu['id_regu'] ?>">Plihan Awal = <?= $d_regu['nama_regu']?></option>
+                            <?php
+                            $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu");
+                            while ($d_regu = mysqli_fetch_array($data_regu)) {
+                            ?>
+                            <option value="<?= $d_regu['id_regu'] ?>"><?= $d_regu['nama_regu'] ?></option>
+                            <?php } ?>
+                            <?php } ?>
+                        </select>
+                        </td>
                         </tr>
                     </table>
                     <!-- Tambahkan token CSRF di sini jika diperlukan -->
@@ -125,6 +144,23 @@
                             <td>Wilayah Kerja</td>
                             <td><input class="form-control" type="text" name="wilker" value="" required></td>
                         </tr>
+                        <tr>
+                            <td>Regu</td>
+                            <td>
+                                <select name="id_regu" id="" class="form-control" required>
+                                    <option value="">Pilihan</option>
+                                    <?php
+                                    $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu");
+                                    while ($d_regu = mysqli_fetch_array($data_regu)) {
+                                    ?>
+                                    <option value="<?= $d_regu['id_regu'] ?>"><?= $d_regu['nama_regu'] ?></option>
+
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+
+
                          <tr>
                             <td>Status</td>
                             <td>
@@ -179,12 +215,16 @@
                             <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan']) ?>" required readonly></td>
                         </tr>
                         <tr>
-                            <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="<?= htmlspecialchars($d['wilker']) ?>" required readonly></td>
+                            <td>Nama Regu</td>
+                            <?php 
+                                $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='$d[id_regu]'");
+                                while ($d_regu = mysqli_fetch_array($data_regu)) { ?>
+                            <td><input class="form-control" type="text" name="id_regu" value="<?= htmlspecialchars($d_regu['nama_regu']) ?>" required readonly></td>
+                            <?php } ?>
                         </tr>
                         <tr>
                             <td>Password Baru</td>
-                            <td><input class="form-control" type="text" name="wilker" value="" required></td>
+                            <td><input class="form-control" type="text" name="id_regu" value="" required></td>
                         </tr>
 
                     </table>

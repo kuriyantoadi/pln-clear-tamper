@@ -10,10 +10,11 @@ $nama_petugas = mysqli_real_escape_string($koneksi, $_POST['nama_petugas']);
 $jabatan = mysqli_real_escape_string($koneksi, $_POST['jabatan']);
 $wilker = mysqli_real_escape_string($koneksi, $_POST['wilker']);
 $status = mysqli_real_escape_string($koneksi, $_POST['status']);
+$id_regu = mysqli_real_escape_string($koneksi, $_POST['id_regu']);
 
 // Insert data into the database
-$query = "INSERT INTO tb_user (username, password, nik, nama_petugas, jabatan, wilker, status) 
-          VALUES ('$username', '$password', '$nik', '$nama_petugas', '$jabatan', '$wilker', '$status')";
+$query = "INSERT INTO tb_user (username, password, nik, nama_petugas, jabatan, wilker, status, id_regu) 
+          VALUES ('$username', '$password', '$nik', '$nama_petugas', '$jabatan', '$wilker', '$status', '$id_regu')";
 
 $cek_tambah = mysqli_query($koneksi, $query);
 

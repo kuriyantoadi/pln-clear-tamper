@@ -11,7 +11,7 @@ $username = $_POST['username'];
 $nik = $_POST['nik'];
 $nama_petugas = $_POST['nama_petugas'];
 $jabatan = $_POST['jabatan'];
-$wilker = $_POST['wilker'];
+$id_regu = $_POST['id_regu'];
 
 
 
@@ -20,7 +20,7 @@ $cek_edit = mysqli_query($koneksi, "UPDATE tb_user SET
         nik='$nik',
         nama_petugas='$nama_petugas',
         jabatan='$jabatan',
-        wilker='$wilker'
+        id_regu = '$id_regu'
         where id_user='$id_user'
         ");
 
