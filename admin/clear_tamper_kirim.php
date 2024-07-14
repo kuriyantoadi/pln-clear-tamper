@@ -17,12 +17,12 @@ if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = '';
 }
 
-
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper SET
         clear_tamper='$clear_tamper',
         status_permintaan='$status_permintaan' WHERE id_clear_tamper='$id_clear_tamper'
         ");
 
+// exit();
 // var_dump(cek_edit);
 if ($cek_edit) {
     header("location:clear_tamper.php?pesan=update_clear_tamper_berhasil");

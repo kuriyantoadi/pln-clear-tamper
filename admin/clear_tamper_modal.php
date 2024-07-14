@@ -58,7 +58,6 @@
                             <?php }else { ?>
                                 <div class="badge bg-danger text-white rounded-pill">Error</div>
                                 <?php } ?>
-
                        </td>
                     </tr>
                 </table>
@@ -121,7 +120,7 @@
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                            <input type="text" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
                             <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>
