@@ -129,13 +129,15 @@
 
             let valid = true;
 
-            if (inputBondgValue.length < 9 || inputBondgValue.length > 12) {
-                alert('Input Bondg harus antara 9 dan 12 karakter.');
+             let valid = true;
+
+            if (inputBondgValue.length < 8 || inputBondgValue.length > 12) {
+                alert('Input Bondg harus antara 8 dan 12 karakter.');
                 valid = false;
             }
 
-            if (inputNokwhValue.length !== 12) {
-                alert('Input No Kwh harus 12 karakter.');
+            if (inputNokwhValue.length < 11 || inputNokwhValue.length > 12) {
+                alert('Input No Kwh harus antara 11 dan 12 karakter.');
                 valid = false;
             }
 
