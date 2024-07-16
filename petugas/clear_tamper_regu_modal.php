@@ -1,4 +1,4 @@
-<!-- Modal Detail Awal -->
+<!-- Modal Detail Awal-->
 <div class="modal fade" id="detail<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -150,50 +150,30 @@
                 <form action="clear_tamper_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
-                    <tr>
+                        <tr>
                             <td>Nama Petugas 1</td>
-                            <td>
-                                <select name="id_user" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>                               
-                            </td>
+                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas'])?>" required readonly></td>
                         </tr>
-                    <tr>
-                    <tr>
+                        <tr>
                             <td>Nama Petugas 2</td>
                             <td>
                                 <select name="id_user" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>                            
+                                <option value="<?= $d['id_user']?>">Pilihan Awal = <?= $d['nama_petugas']?></option>                                
+                                    <?php
+                                        $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
+                                        while ($d_pegawai = mysqli_fetch_array($d1)) {
+                                    ?>
+                                        <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
+                                    <?php } ?>
+                                </select>                               
                             </td>
                         </tr>
-                    <tr>
-                    <tr>
+                        <tr>
+                        <tr>
                             <td>Nama Petugas 3</td>
-                            <td>
-                                <select name="id_user" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>                               </td>
+                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas'])?>" required readonly></td>
                         </tr>
-                    <tr>
+                        <tr>
                             <td>bondg</td>
                             <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" id="inputBondg" required></td>
                         </tr>
@@ -356,4 +336,4 @@
         </div>
     </div>
 </div>
-<!-- Modal Password Akhir
+<!-- Modal Password Akhir -->

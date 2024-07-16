@@ -90,4 +90,4 @@ function upload() {
     move_uploaded_file($tmpName, '../assets/photo_kwh/' . $namaFileBaru);
     return $namaFileBaru;
 }
-?>
+

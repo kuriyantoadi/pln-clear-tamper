@@ -106,7 +106,7 @@
     </div>
 
 
-    <script>
+    <!-- <script>
         // input clear tamper
         document.getElementById('formInputClearTamper').addEventListener('submit', function(event) {
             const inputClearTamper = document.getElementById('inputClearTamper');
@@ -145,7 +145,7 @@
                 event.preventDefault(); // Mencegah form dari pengiriman jika ada error
             }
         });
-    </script>
+    </script> -->
 
 
 

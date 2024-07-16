@@ -28,7 +28,7 @@ if ($_SESSION['status'] != "admin") {
 
 
         <!-- data table -->
-        <link rel="stylesheet" href="../asstes/dataTable/jquery.dataTables.min.js">
+        <link rel="stylesheet" href="../assets/dataTable/jquery.dataTables.min.js">
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
