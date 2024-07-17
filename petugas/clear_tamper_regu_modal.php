@@ -1,5 +1,5 @@
 <!-- Modal Detail Awal-->
-<div class="modal fade" id="detail<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="detail<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -71,7 +71,7 @@
 <!-- Modal Detail Akhir -->
 
 <!-- Modal Kirim Tamper Awal-->
-<div class="modal fade" id="kirim_tamper<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="kirim_tamper<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -121,7 +121,7 @@
                         <th>Clear Tamper</th>
                         <td>
                             <input type="text" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
-                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
+                            <input type="hidden" name="id_clear_tamper_regu" value="<?= $d['id_clear_tamper_regu'] ?>">
                         </td>
                     </tr>
                      
@@ -139,7 +139,7 @@
 
 
 <!-- Modal Edit Awal-->
-<div class="modal fade" id="edit<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
@@ -147,7 +147,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_regu_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                         <tr>
@@ -157,13 +157,13 @@
                         <tr>
                             <td>Nama Petugas 2</td>
                             <td>
-                                <select name="id_user" class="form-control" id="">
+                                <select name="id_user2" class="form-control" id="">
                                 <option value="<?= $d['id_user']?>">Pilihan Awal = <?= $d['nama_petugas']?></option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
                                         while ($d_pegawai = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d['id_user'] ?>"><?php echo $d['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>                               
                             </td>
@@ -201,7 +201,7 @@
                             <td>Indikasi</td>
                             <td>
                                 <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
-                                <input type="hidden" name="id_clear_tamper" class="form-control" value="<?= $d['id_clear_tamper'] ?>" required>
+                                <input type="hidden" name="id_clear_tamper_regu" class="form-control" value="<?= $d['id_clear_tamper_regu'] ?>" required>
                             </td>
                         </tr>                                           
                         

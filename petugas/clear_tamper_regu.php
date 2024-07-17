@@ -48,13 +48,18 @@
                include '../koneksi.php';
 
                 // Perform the join query
-                $query = "
-                SELECT tb_clear_tamper.id_clear_tamper, tb_clear_tamper.bondg, tb_clear_tamper.nama_pelapor,tb_clear_tamper.tgl_permintaan, tb_clear_tamper.alamat, tb_clear_tamper.no_hp, tb_user.nama_petugas, tb_clear_tamper.photo_kwh, tb_clear_tamper.no_kwh, tb_clear_tamper.clear_tamper, tb_clear_tamper.indikasi, tb_clear_tamper.status_permintaan, tb_user.id_user, tb_user.nama_petugas
-                FROM tb_clear_tamper
+                $query = " 
+                SELECT tb_clear_tamper_regu.*,
+                tb_user.id_user, 
+                tb_user.nama_petugas
+                FROM 
+                tb_clear_tamper_regu
                 JOIN tb_user
-                ON tb_clear_tamper.id_user = tb_user.id_user
-                WHERE tb_user.jabatan = 'petugas'
-                ORDER BY tb_clear_tamper.tgl_permintaan ASC;
+                ON tb_clear_tamper_regu.id_user1 = tb_user.id_user
+                WHERE 
+                tb_user.jabatan = 'petugas'
+                ORDER BY 
+                tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 
                 $data = mysqli_query($koneksi, $query);
@@ -93,10 +98,10 @@
                                 <?php } ?> 
                        </td>
                        <td>
-                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper=<?php echo $d['id_clear_tamper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="edit"></i></button>
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="eye"></i></button>
-                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="unlock"></i></button>
+                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper_regu=<?php echo $d['id_clear_tamper_regu']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="edit"></i></button>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="eye"></i></button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="unlock"></i></button>
                             <?php include('clear_tamper_regu_modal.php') ?>
                         </td>
                     </tr>

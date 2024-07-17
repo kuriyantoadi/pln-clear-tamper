@@ -1,12 +1,12 @@
 <?php
 session_start();
-if ($_SESSION['status'] != "admin") {
+if ($_SESSION['status'] != "petugas") {
     header("location:login.php?pesan=belum_login");
 }
 
 include '../koneksi.php';
 
-$id_clear_tamper = htmlspecialchars($_POST['id_clear_tamper']);
+$id_clear_tamper_regu = htmlspecialchars($_POST['id_clear_tamper_regu']);
 $bondg = htmlspecialchars($_POST['bondg']);
 $tgl_permintaan = htmlspecialchars($_POST['tgl_permintaan']);
 $nama_pelapor = htmlspecialchars($_POST['nama_pelapor']);
@@ -16,6 +16,7 @@ $no_kwh = htmlspecialchars($_POST['no_kwh']);
 $indikasi = htmlspecialchars($_POST['indikasi']);
 $clear_tamper = htmlspecialchars($_POST['clear_tamper']);
 $id_user = htmlspecialchars($_POST['id_user']);
+$id_user2 = htmlspecialchars($_POST['id_user2']);
 
 if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';
@@ -25,7 +26,7 @@ if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = '';
 }
 
-$cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper SET
+$cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper_regu SET
         bondg='$bondg',
         tgl_permintaan='$tgl_permintaan',
         nama_pelapor='$nama_pelapor',
@@ -35,13 +36,14 @@ $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper SET
         indikasi='$indikasi',
         clear_tamper='$clear_tamper',
         id_user='$id_user',
+        id_user2='$id_user2',
         status_permintaan='$status_permintaan'
-        WHERE id_clear_tamper='$id_clear_tamper'
+        WHERE id_clear_tamper_regu='$id_clear_tamper_regu'
         ");
 
 // var_dump(cek_edit);
 if ($cek_edit) {
-    header("location:clear_tamper.php?pesan=update_clear_tamper_berhasil");
+    header("location:clear_tamper_regu.php?pesan=update_clear_tamper_berhasil");
 }else {
-    header("location:clear_tamper.php?pesan=update_clear_tamper_berhasil");
+    header("location:clear_tamper_regu.php?pesan=update_clear_tamper_berhasil");
 }
