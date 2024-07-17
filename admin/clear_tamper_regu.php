@@ -49,11 +49,10 @@
 
                 // Perform the join query
                 $query = "
-                SELECT * 
-                FROM tb_clear_tamper
-                JOIN tb_user 
-                ON tb_clear_tamper.id_user = tb_user.id_user
-                ORDER BY tgl_permintaan ASC;
+                SELECT tb_clear_tamper_regu.*, tb_user.*
+                FROM tb_clear_tamper_regu
+                JOIN tb_user ON tb_clear_tamper_regu.id_user1 = tb_user.id_user
+                ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 
                 $data = mysqli_query($koneksi, $query);
@@ -62,19 +61,10 @@
                     echo "Error: " . mysqli_error($koneksi);
                     exit;
                 }
-                
-                // Set locale to Indonesian
-                // setlocale(LC_TIME, 'id_ID.UTF-8');
-                // Check if tgl_permintaan is set, otherwise use today's date
-                // $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
-
-
+        
                 $no=1;
-                while ($d = mysqli_fetch_array($data)) {
-                    
+                while ($d = mysqli_fetch_array($data)) {                    
                     $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
-
-
                 ?>
                 
                     <tr>
@@ -119,7 +109,7 @@
         });
     </script>
 
-    <!-- <script>
+    <script>
         document.getElementById('formEditClearTamper').addEventListener('submit', function(event) {
             const inputBondg = document.getElementById('inputBondg');
             const inputBondgValue = inputBondg.value;
@@ -145,7 +135,7 @@
                 event.preventDefault(); // Mencegah form dari pengiriman jika ada error
             }
         });
-    </script> -->
+    </script>
 
 
 

@@ -158,20 +158,29 @@
                             <td>Nama Petugas 2</td>
                             <td>
                                 <select name="id_user2" class="form-control" id="">
-                                <option value="<?= $d['id_user']?>">Pilihan Awal = <?= $d['nama_petugas']?></option>                                
+                                <option value="<?= $d['id_user']?>">Pilihan</option>                                
                                     <?php
-                                        $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                        while ($d_pegawai = mysqli_fetch_array($d1)) {
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d['id_user'] ?>"><?php echo $d['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_2['id_user'] ?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>                               
                             </td>
                         </tr>
                         <tr>
-                        <tr>
                             <td>Nama Petugas 3</td>
-                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas'])?>" required readonly></td>
+                            <td>
+                                <select name="id_user3" class="form-control" id="">
+                                <option value="<?= $d['id_user']?>">Pilihan</option>                                
+                                    <?php
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_3 = mysqli_fetch_array($d1)) {
+                                    ?>
+                                        <option value="<?php echo $d_petugas_3['id_user'] ?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                    <?php } ?>
+                                </select>                               
+                            </td>
                         </tr>
                         <tr>
                             <td>bondg</td>

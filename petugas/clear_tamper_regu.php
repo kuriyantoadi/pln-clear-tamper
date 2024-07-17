@@ -125,7 +125,7 @@
         });
     </script>
 
-    <!-- <script>
+    <script>
         document.getElementById('formEditClearTamper').addEventListener('submit', function(event) {
             const inputBondg = document.getElementById('inputBondg');
             const inputBondgValue = inputBondg.value;
@@ -151,7 +151,7 @@
                 event.preventDefault(); // Mencegah form dari pengiriman jika ada error
             }
         });
-    </script> -->
+    </script>
 
 
 
