@@ -96,7 +96,7 @@
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="edit"></i></button>
                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="eye"></i></button>
                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="unlock"></i></button>
-                            <?php include('regu_clear_tamper_modal.php') ?>
+                            <?php include('clear_tamper_regu_modal.php') ?>
                         </td>
                     </tr>
                 

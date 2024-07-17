@@ -48,7 +48,7 @@
 
                             <a class="nav-link collapsed" href="regu_clear_tamper.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <div class="nav-link-icon"><i data-feather="file-text"></i></div>
-                                Clear Tamper Regu
+                                Kelola Regu
                                 <!-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
 
