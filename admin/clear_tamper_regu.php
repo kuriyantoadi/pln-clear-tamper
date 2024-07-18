@@ -82,10 +82,10 @@
                                 <?php } ?> 
                        </td>
                        <td>
-                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper=<?php echo $d['id_clear_tamper']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="edit"></i></button>
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="eye"></i></button>
-                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper'] ?>" id=".$d['id_clear_tamper']."><i data-feather="unlock"></i></button>
+                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper_regu=<?php echo $d['id_clear_tamper_regu']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="edit"></i></button>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="eye"></i></button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="unlock"></i></button>
                             <?php include('clear_tamper_regu_modal.php') ?>
                         </td>
                     </tr>
@@ -118,8 +118,6 @@
             const inputNokwhValue = inputNokwh.value;
 
             let valid = true;
-
-             let valid = true;
 
             if (inputBondgValue.length < 8 || inputBondgValue.length > 12) {
                 alert('Input Bondg harus antara 8 dan 12 karakter.');

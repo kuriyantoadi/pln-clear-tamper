@@ -129,8 +129,6 @@
 
             let valid = true;
 
-             let valid = true;
-
             if (inputBondgValue.length < 8 || inputBondgValue.length > 12) {
                 alert('Input Bondg harus antara 8 dan 12 karakter.');
                 valid = false;

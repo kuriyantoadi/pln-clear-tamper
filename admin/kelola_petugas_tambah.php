@@ -24,4 +24,3 @@ if ($cek_tambah) {
 } else {
     echo "Error: " . mysqli_error($koneksi);
 }
-?>

@@ -1,5 +1,5 @@
 <!-- Modal Detail Awal -->
-<div class="modal fade" id="detail<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="detail<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +9,15 @@
             <div class="modal-body">
                 <table class="table table-hover">
                     <tr>
-                        <th>Nama Petugas</th>
+                        <th>Nama Petugas 1</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Petugas 2</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Petugas 3</th>
                         <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
                     </tr>
                     <tr>
@@ -71,7 +79,7 @@
 <!-- Modal Detail Akhir -->
 
 <!-- Modal Kirim Tamper Awal-->
-<div class="modal fade" id="kirim_tamper<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
+<div class="modal fade" id="kirim_tamper<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalXl" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -82,7 +90,15 @@
                 <form action="clear_tamper_kirim.php" id="formInputClearTamper" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
                     <tr>
-                        <th>Nama Petugas</th>
+                        <th>Nama Petugas 1</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Petugas 2</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Petugas 3</th>
                         <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
                     </tr>
                     <tr>
@@ -115,13 +131,13 @@
                     </tr>
                     <!-- <tr>
                         <th>id_user</th>
-                        <td>: <?= htmlspecialchars($d['id_user']) ?></td>
+                        <td>: <?= htmlspecialchars($d['id_user1']) ?></td>
                     </tr> -->
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
                             <input type="text" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
-                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
+                            <input type="hidden" name="id_clear_tamper_regu" value="<?= $d['id_clear_tamper_regu'] ?>">
                         </td>
                     </tr>
                      
@@ -139,7 +155,7 @@
 
 
 <!-- Modal Edit Awal-->
-<div class="modal fade" id="edit<?php echo $d['id_clear_tamper']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit<?php echo $d['id_clear_tamper_regu']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
@@ -147,13 +163,13 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_regu_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                     <tr>
                             <td>Nama Petugas 1</td>
                             <td>
-                                <select name="id_user" class="form-control" id="">
+                                <select name="id_user1" class="form-control" id="">
                                     <option value="">Pilihan</option>
                                         <?php
                                             $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
@@ -168,7 +184,7 @@
                     <tr>
                             <td>Nama Petugas 2</td>
                             <td>
-                                <select name="id_user" class="form-control" id="">
+                                <select name="id_user2" class="form-control" id="">
                                     <option value="">Pilihan</option>
                                         <?php
                                             $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
@@ -183,7 +199,7 @@
                     <tr>
                             <td>Nama Petugas 3</td>
                             <td>
-                                <select name="id_user" class="form-control" id="">
+                                <select name="id_user3" class="form-control" id="">
                                     <option value="">Pilihan</option>
                                         <?php
                                             $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
@@ -191,7 +207,8 @@
                                         ?>
                                             <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
                                         <?php } ?>
-                                </select>                               </td>
+                                </select>
+                            </td>
                         </tr>
                     <tr>
                             <td>bondg</td>
@@ -221,7 +238,7 @@
                             <td>Indikasi</td>
                             <td>
                                 <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
-                                <input type="hidden" name="id_clear_tamper" class="form-control" value="<?= $d['id_clear_tamper'] ?>" required>
+                                <input type="hidden" name="id_clear_tamper_regu" class="form-control" value="<?= $d['id_clear_tamper_regu'] ?>" required>
                             </td>
                         </tr>                                           
                         
@@ -308,7 +325,7 @@
 <!-- Modal Tambah Akhir -->
 
 <!-- Modal Password Awal-->
-<div class="modal fade" id="password<?php echo $d['id_user']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="password<?php echo $d['id_user1']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -318,7 +335,7 @@
             <div class="modal-body">
                 <form action="kelola_petugas_password.php" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
-                    <input type="hidden" name="id_user" value="<?= $d['id_user'] ?>">
+                    <input type="hidden" name="id_user" value="<?= $d['id_user1'] ?>">
                     <table class="table">
                         <tr>
                             <td>Username</td>
