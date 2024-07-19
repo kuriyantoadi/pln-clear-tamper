@@ -54,14 +54,12 @@
                 SELECT tb_clear_tamper_regu.*,
                 tb_user.id_user, 
                 tb_user.nama_petugas
-                FROM 
-                tb_clear_tamper_regu
+                FROM tb_clear_tamper_regu
                 JOIN tb_user
                 ON tb_clear_tamper_regu.id_user1 = tb_user.id_user
-                WHERE 
-                tb_user.jabatan = 'petugas'
-                ORDER BY 
-                tb_clear_tamper_regu.tgl_permintaan ASC;
+                WHERE tb_user.jabatan = 'petugas' AND
+                tb_user.id_user = ".$_SESSION['id_user']."
+                ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 
                 $data = mysqli_query($koneksi, $query);

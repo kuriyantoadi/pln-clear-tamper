@@ -52,6 +52,7 @@
                 SELECT tb_user.*, tb_clear_tamper_regu.*
                 FROM tb_user
                 JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user1
+                WHERE tb_user.id_user = ".$_SESSION['id_user']."
                 ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 

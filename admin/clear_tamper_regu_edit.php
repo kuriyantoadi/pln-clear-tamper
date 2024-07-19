@@ -17,7 +17,7 @@ $indikasi = htmlspecialchars($_POST['indikasi']);
 $clear_tamper = htmlspecialchars($_POST['clear_tamper']);
 $id_user1 = htmlspecialchars($_POST['id_user1']);
 $id_user2 = htmlspecialchars($_POST['id_user2']);
-$id_user2 = htmlspecialchars($_POST['id_user2']);
+$id_user3 = htmlspecialchars($_POST['id_user3']);
 
 if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';

@@ -170,77 +170,94 @@
                             <td>Nama Petugas 1</td>
                             <td>
                                 <select name="id_user1" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>                               
+                                <option value="<?php echo $d['id_user']?>">Pilihan awal <?= $username ?></option>                                
+                                    <?php
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_1 = mysqli_fetch_array($d1)) {
+                                    ?>
+                                        <option value="<?php echo $d_pegawai['id_user']?>"><?php echo $d_petugas_1['nama_petugas'] ?></option>
+                                    <?php } ?>
+                                </select>     
                             </td>
                         </tr>
-                    <tr>
-                    <tr>
+                        <tr>
                             <td>Nama Petugas 2</td>
                             <td>
                                 <select name="id_user2" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>                            
+                                <option value="">Pilihan</option>                                
+                                    <?php
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_2 = mysqli_fetch_array($d1)) {
+                                    ?>
+                                        <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
+                                    <?php } ?>
+                                </select>  
                             </td>
                         </tr>
-                    <tr>
-                    <tr>
+                        <!-- <tr>
+                            <td>Nama Petugas 2</td>
+                            <td>
+                                <select name="id_user2" class="form-control" id="">
+                                <option value="">Pilihan</option>                                
+                                    <?php
+                                        // $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        // while ($d_petugas_2 = mysqli_fetch_array($d1)) {
+                                        // $selected = isset($d_petugas_2['id_user']) && $d_petugas_2['id_user'] == $id_user2 ? 'selected' : '';
+                                        ?>
+                                        <option value="<?php //echo $d_petugas_2['id_user']?>" <?php //echo $selected ?>><?php //echo $d_petugas_2['nama_petugas'] ?></option>
+                                    <?php //} ?>
+                                </select>     
+                            </td>
+                        </tr> -->
+                        <tr>
                             <td>Nama Petugas 3</td>
                             <td>
                                 <select name="id_user3" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                        <?php
-                                            $d1 = mysqli_query($koneksi, "select * from tb_user where jabatan='petugas'");
-                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
-                                        ?>
-                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
-                                        <?php } ?>
-                                </select>
+                                <option value="">Pilihan</option>                                
+                                    <?php
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_3 = mysqli_fetch_array($d1)) {
+                                    ?>
+                                        <option value="<?php echo $d_petugas_3['id_user']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                    <?php } ?>
+                                </select>  
                             </td>
                         </tr>
-                    <tr>
+                        <tr>
                             <td>bondg</td>
-                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" id="inputBondg" required></td>
+                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" require></td>
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
-                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" required></td>
+                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" require></td>
                         </tr>
                         <tr>
                             <td>Nama Pelapor</td>
-                            <td><input class="form-control" type="text" name="nama_pelapor" value="<?= htmlspecialchars($d['nama_pelapor'])?>" required></td>
+                            <td><input class="form-control" type="text" name="nama_pelapor" value="<?= htmlspecialchars($d['nama_pelapor'])?>" require></td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
-                            <td><input class="form-control" type="text" name="alamat" value="<?= htmlspecialchars($d['alamat'])?>" required></td>
+                            <td><input class="form-control" type="text" name="alamat" value="<?= htmlspecialchars($d['alamat'])?>" require></td>
                         </tr>
                         <tr>
                             <td>No HP</td>
-                            <td><input class="form-control" type="text" name="no_hp" value="<?= htmlspecialchars($d['no_hp'])?>" required></td>
+                            <td><input class="form-control" type="text" name="no_hp" value="<?= htmlspecialchars($d['no_hp'])?>" require></td>
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
+                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" require></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
                             <td>
-                                <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
-                                <input type="hidden" name="id_clear_tamper_regu" class="form-control" value="<?= $d['id_clear_tamper_regu'] ?>" required>
+                                <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" require>
+                                <input type="hidden" name="id_clear_tamper_regu" class="form-control" value="<?= $d['id_clear_tamper_regu'] ?>" require>
                             </td>
-                        </tr>                                           
+                        </tr>
+                        <tr>
+                            <td>Photo KWH</td>
+                            <td><input class="form-control" type="file" name="photo_kwh" value="<?= htmlspecialchars($d['photo_kwh']) ?>" require></td>
+                        </tr>                            
                         
                 </table>
 

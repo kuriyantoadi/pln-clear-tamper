@@ -27,7 +27,7 @@
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php htmlspecialchars($d['id_user2'])?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>     
                             </td>
@@ -41,10 +41,10 @@
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value=""><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_3['id_user']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
-                                <input class="form-control" type="hidden" name="id_user3" value="<?= htmlspecialchars($d['id_user3'])?>" id="inputid_user3">                             
+                                <!-- <input class="form-control" type="hidden" name="id_user3" value="<?= htmlspecialchars($d['id_user3'])?>" id="inputid_user3">                              -->
                             </td>
                         </tr>
                         <tr>
