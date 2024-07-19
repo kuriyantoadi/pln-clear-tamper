@@ -87,7 +87,7 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_kirim.php" id="formInputClearTamper" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_regu_kirim.php" id="formInputClearTamper" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
                     <tr>
                         <th>Nama Petugas 1</th>

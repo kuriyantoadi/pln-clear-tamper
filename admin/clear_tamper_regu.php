@@ -12,9 +12,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="zap"></i></div>
-                            Clear Tamper Regu
+                            Clear Tamper
                         </h1>
-                        <div class="page-header-subtitle">Halaman Clear Tamper Regu</div>
+                        <div class="page-header-subtitle">Halaman Clear Tamper</div>
                     </div>
                    
                 </div>
@@ -25,7 +25,7 @@
 
 <div class="container-xl px-4 mt-n10">
     <div class="card mb-4">
-        <div class="card-header">Tabel Clear Tamper Regu</div>
+        <div class="card-header">Tabel Clear Tamper</div>
         <div class="card-body">
 
             <?php include('../alert.php'); ?>
@@ -49,9 +49,9 @@
 
                 // Perform the join query
                 $query = "
-                SELECT tb_clear_tamper_regu.*, tb_user.*
-                FROM tb_clear_tamper_regu
-                JOIN tb_user ON tb_clear_tamper_regu.id_user1 = tb_user.id_user
+                SELECT tb_user.*, tb_clear_tamper_regu.*
+                FROM tb_user
+                JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user1
                 ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 
@@ -61,10 +61,19 @@
                     echo "Error: " . mysqli_error($koneksi);
                     exit;
                 }
-        
+                
+                // Set locale to Indonesian
+                // setlocale(LC_TIME, 'id_ID.UTF-8');
+                // Check if tgl_permintaan is set, otherwise use today's date
+                // $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
+
+
                 $no=1;
-                while ($d = mysqli_fetch_array($data)) {                    
+                while ($d = mysqli_fetch_array($data)) {
+                    
                     $date_value = isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d');
+
+
                 ?>
                 
                     <tr>
@@ -81,12 +90,12 @@
                                 <div class="badge bg-danger text-white rounded-pill">Error</div>
                                 <?php } ?> 
                        </td>
-                       <td>
-                            <a class="btn btn-danger btn-sm" href="clear_tamper_hapus.php?id_clear_tamper_regu=<?php echo $d['id_clear_tamper_regu']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?php echo $d['tgl_permintaan']; ?> dan Nomor KWH <?php echo $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="edit"></i></button>
-                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="eye"></i></button>
-                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?php echo $d['id_clear_tamper_regu'] ?>" id=".$d['id_clear_tamper_regu']."><i data-feather="unlock"></i></button>
-                            <?php include('clear_tamper_regu_modal.php') ?>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="clear_tamper_regu_hapus.php?id_clear_tamper_regu=<?= $d['id_clear_tamper_regu']; ?>" onclick="return confirm('Anda yakin Hapus data pengajuan <?= $d['tgl_permintaan']; ?> dan Nomor KWH <?= $d['no_kwh']; ?> ?')"><i data-feather="trash-2"></i></a>
+                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="edit"></i></button>
+                            <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="eye"></i></button>
+                            <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="unlock"></i></button>
+                            <!-- <?php include('clear_tamper_regu_modal.php') ?> -->
                         </td>
                     </tr>
                 

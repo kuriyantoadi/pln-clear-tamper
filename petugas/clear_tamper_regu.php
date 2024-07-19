@@ -1,5 +1,6 @@
 <?php include('../template/header-petugas.php') ?>
 <?php include('../template/header-petugas-menu.php') ?>
+<?php include('../koneksi.php'); ?>
 
 
 <!-- batas konten atas -->
@@ -22,15 +23,16 @@
         </div>
     </header>
     
+    
 
 <div class="container-xl px-4 mt-n10">
     <div class="card mb-4">
         <div class="card-header">Tabel Clear Tamper Regu</div>
         <div class="card-body">
-
+            
             <?php include('../alert.php'); ?>
-
             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Tambah Petugas Regu</button>
+            <?php include('clear_tamper_regu_modal_tambah.php') ?>
             <table id="tabel_js" class="table table-hover">
                 <thead>
                     <tr>
