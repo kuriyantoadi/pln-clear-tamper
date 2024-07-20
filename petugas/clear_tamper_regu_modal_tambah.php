@@ -14,20 +14,20 @@
                     <table class="table table-hover">
                         <tr>
                             <td>Nama Petugas 1</td>
-                            <td><input class="form-control" type="text" value="<?= $username ?>" id="inputid_user1" required readonly>
-                            <input class="form-control" type="hidden" name="id_user1" value="<?= $id_user ?>" id="inputid_user1">
+                            <td><input class="form-control" type="text" value="<?= $username ?>" id="inputid_user" required readonly>
+                            <input class="form-control" type="hidden" name="id_user" value="<?= $id_user ?>" id="inputid_user">
                             </td>
                         </tr>
                         <tr>
                             <td>Nama Petugas 2</td>
                             <td>
-                                <select name="id_user2" class="form-control" id="">
+                                <select name="nama_petugas_2" class="form-control" id="">
                                 <option value="">Pilihan</option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_2['nama_petugas']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>     
                             </td>
@@ -35,13 +35,13 @@
                         <tr>
                             <td>Nama Petugas 3</td>
                             <td>
-                                <select name="id_user3" class="form-control" id="">
+                                <select name="nama_petugas_3" class="form-control" id="">
                                 <option value="">Pilihan</option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_3['id_user']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_3['nama_petugas']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
                                 <!-- <input class="form-control" type="hidden" name="id_user3" value="<?= htmlspecialchars($d['id_user3'])?>" id="inputid_user3">                              -->

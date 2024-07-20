@@ -49,10 +49,7 @@
 
                 // Perform the join query
                 $query = "
-                SELECT tb_user.*, tb_clear_tamper_regu.*
-                FROM tb_user
-                JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user1
-                WHERE tb_user.id_user = ".$_SESSION['id_user']."
+                SELECT tb_user.*, tb_clear_tamper_regu.* FROM tb_user JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user
                 ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 
@@ -96,7 +93,7 @@
                             <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#edit<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="edit"></i></button>
                             <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="eye"></i></button>
                             <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#kirim_tamper<?= $d['id_clear_tamper_regu'] ?>" id="<?= $d['id_clear_tamper_regu'] ?>"><i data-feather="unlock"></i></button>
-                            <!-- <?php include('clear_tamper_regu_modal.php') ?> -->
+                            <?php include('clear_tamper_regu_modal.php') ?>
                         </td>
                     </tr>
                 

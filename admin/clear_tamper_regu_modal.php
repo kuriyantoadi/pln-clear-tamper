@@ -14,11 +14,11 @@
                     </tr>
                     <tr>
                         <th>Nama Petugas 2</th>
-                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                        <td>: <?= htmlspecialchars($d['nama_petugas_2']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Petugas 3</th>
-                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                        <td>: <?= htmlspecialchars($d['nama_petugas_3']) ?></td>
                     </tr>
                     <tr>
                         <th>Bondg</th>
@@ -169,56 +169,34 @@
                     <tr>
                             <td>Nama Petugas 1</td>
                             <td>
-                                <select name="id_user1" class="form-control" id="">
-                                <option value="<?php echo $d['id_user']?>">Pilihan awal <?= $username ?></option>                                
-                                    <?php
-                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
-                                        while ($d_petugas_1 = mysqli_fetch_array($d1)) {
-                                    ?>
-                                        <option value="<?php echo $d_pegawai['id_user']?>"><?php echo $d_petugas_1['nama_petugas'] ?></option>
-                                    <?php } ?>
-                                </select>     
+                                <input type="text" class="form-control" name=""  value="<?= $d['nama_petugas'] ?>" readonly>
                             </td>
                         </tr>
                         <tr>
                             <td>Nama Petugas 2</td>
                             <td>
-                                <select name="id_user2" class="form-control" id="">
-                                <option value="">Pilihan</option>                                
+                                <select name="nama_petugas_2" class="form-control" id="">
+                                <option value="<?php echo $d['nama_petugas']?>">Pilihan awal = <?= $d['nama_petugas_2'] ?></option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_2['nama_petugas']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
                             </td>
                         </tr>
-                        <!-- <tr>
-                            <td>Nama Petugas 2</td>
-                            <td>
-                                <select name="id_user2" class="form-control" id="">
-                                <option value="">Pilihan</option>                                
-                                    <?php
-                                        // $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
-                                        // while ($d_petugas_2 = mysqli_fetch_array($d1)) {
-                                        // $selected = isset($d_petugas_2['id_user']) && $d_petugas_2['id_user'] == $id_user2 ? 'selected' : '';
-                                        ?>
-                                        <option value="<?php //echo $d_petugas_2['id_user']?>" <?php //echo $selected ?>><?php //echo $d_petugas_2['nama_petugas'] ?></option>
-                                    <?php //} ?>
-                                </select>     
-                            </td>
-                        </tr> -->
+                        
                         <tr>
                             <td>Nama Petugas 3</td>
                             <td>
-                                <select name="id_user3" class="form-control" id="">
-                                <option value="">Pilihan</option>                                
+                                <select name="nama_petugas_3" class="form-control" id="">
+                                <option value="<?php echo $d['nama_petugas_3']?>">Pilihan awal = <?= $d['nama_petugas_3'] ?></option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_3['id_user']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_3['nama_petugas']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
                             </td>
@@ -277,117 +255,3 @@
 </div>
 <!-- Modal Edit Akhir -->
 
-
-<!-- Modal Tambah Awal-->
-<div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Petugas</h5>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="kelola_petugas_tambah.php" method="post" enctype="multipart/form-data">
-                    <!-- Menyimpan ID pengguna yang sedang diedit -->
-                    <table class="table">
-                        <tr>
-                            <td>Username</td>
-                            <td><input class="form-control" type="text" name="username" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td><input class="form-control" type="text" name="password" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>Nama Petugas</td>
-                            <td><input class="form-control" type="text" name="nama_petugas" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="" required></td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td>
-                                <select name="status" class="form-control" id="">
-                                    <option value="">Pilihan</option>
-                                    <option value="admin">admin</option>
-                                    <option value="petugas">petugas</option>
-                                    <option value="manager">manager</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- Tambahkan token CSRF di sini jika diperlukan -->
-                    <input type="hidden" name="csrf_token" value="your_csrf_token_here">
-            </div>
-            <div class="modal-footer">
-                <!-- Tombol Submit untuk menyimpan perubahan -->
-                <!-- <input type="submit" class="btn btn-info btn" style="margin-bottom: 50px" name="upload" value="simpan"> -->
-                <input type="submit" class="btn btn-primary btn-sm" value="Simpan">
-                </form>
-                <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Tambah Akhir -->
-
-<!-- Modal Password Awal-->
-<div class="modal fade" id="password<?php echo $d['id_user1']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Reset Password Petugas</h5>
-                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="kelola_petugas_password.php" method="post" enctype="multipart/form-data">
-                    <!-- Menyimpan ID pengguna yang sedang diedit -->
-                    <input type="hidden" name="id_user" value="<?= $d['id_user1'] ?>">
-                    <table class="table">
-                        <tr>
-                            <td>Username</td>
-                            <td><input class="form-control" type="text" name="username" value="<?= htmlspecialchars($d['username']) ?>" required readonly></td>
-                        </tr>
-                      
-                        <tr>
-                            <td>Nama Petugas</td>
-                            <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas']) ?>" required readonly></td>
-                        </tr>
-                        <tr>
-                            <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan']) ?>" required readonly></td>
-                        </tr>
-                        <tr>
-                            <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="<?= htmlspecialchars($d['wilker']) ?>" required readonly></td>
-                        </tr>
-                        <tr>
-                            <td>Password Baru</td>
-                            <td><input class="form-control" type="text" name="wilker" value="" required></td>
-                        </tr>
-
-                    </table>
-                    <!-- Tambahkan token CSRF di sini jika diperlukan -->
-                    <input type="hidden" name="csrf_token" value="your_csrf_token_here">
-            </div>
-            <div class="modal-footer">
-                <!-- Tombol Submit untuk menyimpan perubahan -->
-                <!-- <input type="submit" class="btn btn-info btn" style="margin-bottom: 50px" name="upload" value="simpan"> -->
-                <input type="submit" class="btn btn-primary btn-sm" value="Simpan">
-                </form>
-                <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Password Akhir

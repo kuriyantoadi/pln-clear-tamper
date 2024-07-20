@@ -14,11 +14,11 @@
                     </tr>
                     <tr>
                         <th>Nama Petugas 2</th>
-                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                        <td>: <?= htmlspecialchars($d['nama_petugas_2']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Petugas 3</th>
-                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                        <td>: <?= htmlspecialchars($d['nama_petugas_3']) ?></td>
                     </tr>
                     <tr>
                         <th>Bondg</th>
@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <th>Clear Tamper</th>
-                        <td>: <?= htmlspecialchars($d['clear_tamper']) ?></td>
+                        <td>: <?= $d['clear_tamper'] ?></td>
                     </tr>
                      <tr>
                         <th>Status Permintaan</th>
