@@ -9,6 +9,7 @@ if ($_SESSION['status'] != "petugas") {
 include '../koneksi.php';
 
 // Get POST data and sanitize inputs
+$id_clear_tamper_regu = htmlspecialchars($_POST['id_clear_tamper_regu']);
 $bondg = mysqli_real_escape_string($koneksi, $_POST['bondg']);
 $tgl_permintaan = mysqli_real_escape_string($koneksi, $_POST['tgl_permintaan']);
 $nama_pelapor = mysqli_real_escape_string($koneksi, $_POST['nama_pelapor']);
@@ -16,9 +17,12 @@ $alamat = mysqli_real_escape_string($koneksi, $_POST['alamat']);
 $no_hp = mysqli_real_escape_string($koneksi, $_POST['no_hp']);
 $no_kwh = mysqli_real_escape_string($koneksi, $_POST['no_kwh']);
 $indikasi = mysqli_real_escape_string($koneksi, $_POST['indikasi']);
-$id_user = $_POST['id_user'];
-$nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
-$nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
+$id_user1 = mysqli_real_escape_string($koneksi, $_POST['id_user1']);
+$id_user2 = mysqli_real_escape_string($koneksi, $_POST['id_user2']);
+$id_user3 = mysqli_real_escape_string($koneksi, $_POST['id_user3']);
+// $id_user = $_POST['id_user'];
+// $nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
+// $nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
 
 // var_dump($id_user);
 // exit();
@@ -33,6 +37,7 @@ if (!$photo_kwh) {
 $status_permintaan = 'proses';
 
 $query = "INSERT INTO tb_clear_tamper_regu (
+    id_clear_tamper_regu,
     bondg,
     tgl_permintaan,
     nama_pelapor,
@@ -40,12 +45,13 @@ $query = "INSERT INTO tb_clear_tamper_regu (
     no_hp,
     no_kwh,
     indikasi,
-    id_user,
-    nama_petugas_2,
-    nama_petugas_3,
+    id_user1,
+    id_user2,
+    id_user3,
     photo_kwh,
     status_permintaan
 ) VALUES (
+    '$id_clear_tamper_regu',
     '$bondg',
     '$tgl_permintaan',
     '$nama_pelapor',
@@ -53,9 +59,9 @@ $query = "INSERT INTO tb_clear_tamper_regu (
     '$no_hp',
     '$no_kwh',
     '$indikasi',
-    '$id_user',
-    '$nama_petugas_2',
-    '$nama_petugas_3',
+    '$id_user1',
+    '$id_user2',
+    '$id_user3',
     '$photo_kwh',
     '$status_permintaan'
 )";
@@ -79,7 +85,7 @@ function upload() {
     if ($error === 4) {
         echo "<script>
                 alert('Tidak ada file yang diupload');
-                window.location.href = 'clear_tamper.php?pesan=tambah_gagal';
+                window.location.href = 'clear_tamper_regu.php?pesan=tambah_gagal';
               </script>";
         return false;
     }
@@ -91,7 +97,7 @@ function upload() {
     if (!in_array($extentionGambar, $extentionGambarValid)) {
         echo "<script>
                 alert('Ini bukan gambar woi!');
-                window.location.href = 'clear_tamper.php?pesan=tambah_gagal';
+                window.location.href = 'clear_tamper_regu.php?pesan=tambah_gagal';
               </script>";
         return false;
     }

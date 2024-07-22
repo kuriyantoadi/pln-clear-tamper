@@ -54,8 +54,8 @@
                 SELECT tb_clear_tamper_regu.*,
                 tb_user.id_user, 
                 tb_user.nama_petugas
-                FROM tb_clear_tamper_regu
-                JOIN tb_user
+                FROM tb_user
+                JOIN tb_clear_tamper_regu
                 ON tb_clear_tamper_regu.id_user1 = tb_user.id_user
                 WHERE tb_user.jabatan = 'petugas' AND
                 tb_user.id_user = ".$_SESSION['id_user']."

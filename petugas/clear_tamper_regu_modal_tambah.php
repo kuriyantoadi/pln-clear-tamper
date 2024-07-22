@@ -12,39 +12,40 @@
                 <form action="clear_tamper_regu_tambah.php" id="formtambahClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang ditambah -->
                     <table class="table table-hover">
-                        <tr>
+                    <tr>
                             <td>Nama Petugas 1</td>
-                            <td><input class="form-control" type="text" value="<?= $username ?>" id="inputid_user" required readonly>
-                            <input class="form-control" type="hidden" name="id_user" value="<?= $id_user ?>" id="inputid_user">
+                            <td>
+                                <input type="text" class="form-control" name="id_user1"  value="<?= $username ?>" readonly>
+                                <input type="hidden" name="id_user1" class="form-control" value="<?= $_SESSION['id_user'] ?>" require>
                             </td>
                         </tr>
                         <tr>
                             <td>Nama Petugas 2</td>
                             <td>
-                                <select name="nama_petugas_2" class="form-control" id="">
-                                <option value="">Pilihan</option>                                
+                                <select name="id_user2" class="form-control" id="">
+                                <option value="<?php echo $d['id_user2']?>">Pilihan</option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_2['nama_petugas']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
-                                </select>     
+                                </select>  
                             </td>
                         </tr>
+                        
                         <tr>
                             <td>Nama Petugas 3</td>
                             <td>
-                                <select name="nama_petugas_3" class="form-control" id="">
-                                <option value="">Pilihan</option>                                
+                                <select name="id_user3" class="form-control" id="">
+                                <option value="<?php echo $d['id_user3']?>">Pilihan</option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
                                     ?>
-                                        <option value="<?php echo $d_petugas_3['nama_petugas']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
+                                        <option value="<?php echo $d_petugas_3['id_user']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
-                                <!-- <input class="form-control" type="hidden" name="id_user3" value="<?= htmlspecialchars($d['id_user3'])?>" id="inputid_user3">                              -->
                             </td>
                         </tr>
                         <tr>
