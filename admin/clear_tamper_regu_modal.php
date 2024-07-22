@@ -191,15 +191,28 @@
                                 <input type="hidden" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" require>
                             </td>
                         </tr>
+                        <?php
+                            $d2 = mysqli_query($koneksi, "SELECT 
+                                                            tb_clear_tamper_regu.*,
+                                                            u2.nama_petugas AS nama_petugas2,
+                                                            u3.nama_petugas AS nama_petugas3
+                                                            FROM 
+                                                            tb_clear_tamper_regu
+                                                            JOIN tb_user u2 ON tb_clear_tamper_regu.id_user2 = u2.id_user
+                                                            JOIN tb_user u3 ON tb_clear_tamper_regu.id_user3 = u3.id_user
+                                                            WHERE 
+                                                            tb_clear_tamper_regu.id_clear_tamper_regu = '". $d['id_clear_tamper_regu']. "'
+                                                            ORDER BY 
+                                                            tb_clear_tamper_regu.tgl_permintaan ASC;");
+                            while ($d_nama = mysqli_fetch_array($d2)) { ?>  
+                        ?>
                         <tr>
                             <td>Nama Petugas 2</td>
                             <td>
                                 <select name="id_user2" class="form-control" id="">
-                                <option value="<?php echo $d['id_user2']?>">Pilihan awal = <?= $d['nama_petugas'] ?></option>                                
-                                    <?php
-                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
-                                        while ($d_petugas_2 = mysqli_fetch_array($d1)) {
-                                    ?>
+                                        <option value="<?php echo $d['id_user2']?>">Pilihan awal = <?= $d_nama['nama_petugas2'] ?></option>
+                                    <?php $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        while ($d_petugas_2 = mysqli_fetch_array($d1)) { ?>                                
                                         <option value="<?php echo $d_petugas_2['id_user']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
                                     <?php } ?>
                                 </select>  
@@ -210,7 +223,7 @@
                             <td>Nama Petugas 3</td>
                             <td>
                                 <select name="id_user3" class="form-control" id="">
-                                <option value="<?php echo $d['id_user']?>">Pilihan awal = <?= $d['nama_petugas'] ?></option>                                
+                                <option value="<?php echo $d['id_user']?>">Pilihan awal = <?= $d_nama['nama_petugas3'] ?></option>                                
                                     <?php
                                         $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
@@ -220,6 +233,7 @@
                                 </select>  
                             </td>
                         </tr>
+                        <?php } ?>
                         <tr>
                             <td>bondg</td>
                             <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" require></td>
