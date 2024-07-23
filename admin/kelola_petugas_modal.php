@@ -26,11 +26,7 @@
                     </tr>
                     <tr>
                         <th>Nama Regu</th> 
-                        <?php 
-                        $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='$d[id_regu]'");
-                            while ($d_regu = mysqli_fetch_array($data_regu)) { ?>
-                        <td>: <?= htmlspecialchars($d_regu['nama_regu']) ?></td>
-                        <?php } ?>
+                        <td><?= htmlspecialchars($d['nama_regu']) ?></td>
                     </tr>
                 </table>
             </div>

@@ -12,9 +12,9 @@
                     <div class="col-auto mt-4">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="zap"></i></div>
-                            Clear Tamper
+                            Clear Tamper Regu
                         </h1>
-                        <div class="page-header-subtitle">Halaman Clear Tamper</div>
+                        <div class="page-header-subtitle">Halaman Clear Tamper Regu</div>
                     </div>
                    
                 </div>
@@ -25,7 +25,7 @@
 
 <div class="container-xl px-4 mt-n10">
     <div class="card mb-4">
-        <div class="card-header">Tabel Clear Tamper</div>
+        <div class="card-header">Tabel Clear Tamper Regu</div>
         <div class="card-body">
 
             <?php include('../alert.php'); ?>
@@ -49,7 +49,7 @@
 
                 // Perform the join query
                 $query = " SELECT tb_user.*, tb_clear_tamper_regu.* FROM tb_user 
-                JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user1
+                JOIN tb_clear_tamper_regu ON tb_user.id_user = tb_clear_tamper_regu.id_user
                 ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC;
                 ";
 

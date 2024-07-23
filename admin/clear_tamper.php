@@ -37,7 +37,8 @@
                         <th>No</th>
                         <th>Tanggal Permintaan</th>
                         <th>Nama Petugas</th>
-                        <th>Nomor KWH</th>
+                        <th>Nama Pelapor</th>
+                        <!-- <th>Nomor KWH</th> -->
                         <th>Status Permintaan</th>
                         <th>Opsi</th>
                        
@@ -81,7 +82,8 @@
                         <td><?= $no++ ?></td>
                         <td><?= date('d F Y', strtotime($date_value)) ?></td>
                         <td><?= $d['nama_petugas'] ?></td>
-                        <td><?= $d['no_kwh'] ?></td>
+                        <td><?= $d['nama_pelapor'] ?></td>
+                        <!-- <td><?= $d['no_kwh'] ?></td> -->
                         <td>
                             <?php if($d['status_permintaan'] == 'terkirim'){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>

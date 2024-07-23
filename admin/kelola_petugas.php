@@ -46,7 +46,7 @@
                <?php
                 include '../koneksi.php';
                 $no = 1;
-                $data = mysqli_query($koneksi, "SELECT * from tb_user");
+                $data = mysqli_query($koneksi, "SELECT * FROM tb_user JOIN tb_user_regu ON tb_user.id_regu = tb_user_regu.id_regu;");
                 while ($d = mysqli_fetch_array($data)) {
                 ?>
                 

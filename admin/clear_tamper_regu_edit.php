@@ -15,11 +15,9 @@ $no_hp = htmlspecialchars($_POST['no_hp']);
 $no_kwh = htmlspecialchars($_POST['no_kwh']);
 $indikasi = htmlspecialchars($_POST['indikasi']);
 $clear_tamper = htmlspecialchars($_POST['clear_tamper']);
-$id_user1 = htmlspecialchars($_POST['id_user1']);
-$id_user2 = htmlspecialchars($_POST['id_user2']);
-$id_user3 = htmlspecialchars($_POST['id_user3']);
-// $nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
-// $nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
+$id_user = htmlspecialchars($_POST['id_user']);
+$nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
+$nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
 
 if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';
@@ -38,11 +36,10 @@ $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper_regu SET
         no_kwh='$no_kwh',
         indikasi='$indikasi',
         clear_tamper='$clear_tamper',
-        id_user1='$id_user1',
-        id_user2='$id_user2',
-        id_user3='$id_user3',
-        -- nama_petugas_2='$nama_petugas_2',
-        -- nama_petugas_3='$nama_petugas_3',
+        id_user='$id_user',
+        nama_petugas_2='$nama_petugas_2',
+        nama_petugas_3='$nama_petugas_3',
+        clear_tamper='$clear_tamper',
         status_permintaan='$status_permintaan'
         WHERE id_clear_tamper_regu='$id_clear_tamper_regu'
         ");

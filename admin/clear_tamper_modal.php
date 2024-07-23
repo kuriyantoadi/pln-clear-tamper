@@ -194,7 +194,13 @@
                                 <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
                                 <input type="hidden" name="id_clear_tamper" class="form-control" value="<?= $d['id_clear_tamper'] ?>" required>
                             </td>
-                        </tr>                                           
+                        </tr>    
+                        <tr>
+                        <th>Clear Tamper</th>
+                            <td>
+                                <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                            </td>
+                        </tr>                                       
                         
                 </table>
 
