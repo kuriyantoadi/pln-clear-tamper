@@ -11,31 +11,27 @@
                     <?php
                         // include '../koneksi.php';
                         $d1 = mysqli_query($koneksi, "SELECT tb_clear_tamper_regu.*,
-                                                        u1.nama_petugas AS nama_petugas1,
-                                                        u2.nama_petugas AS nama_petugas2,
-                                                        u3.nama_petugas AS nama_petugas3
-                                                        FROM 
-                                                        tb_clear_tamper_regu
-                                                        JOIN tb_user u1 ON tb_clear_tamper_regu.id_user1 = u1.id_user
-                                                        JOIN tb_user u2 ON tb_clear_tamper_regu.id_user2 = u2.id_user
-                                                        JOIN tb_user u3 ON tb_clear_tamper_regu.id_user3 = u3.id_user
-                                                        WHERE 
-                                                        tb_clear_tamper_regu.id_clear_tamper_regu = '". $d['id_clear_tamper_regu']. "'
-                                                        ORDER BY 
-                                                        tb_clear_tamper_regu.tgl_permintaan ASC;");
+                tb_user.id_user, 
+                tb_user.nama_petugas
+                FROM tb_user
+                JOIN tb_clear_tamper_regu
+                ON tb_clear_tamper_regu.id_user = tb_user.id_user
+                WHERE tb_user.jabatan = 'petugas' AND
+                tb_user.id_user = ".$_SESSION['id_user']."
+                ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC");
                         while ($d_petugas = mysqli_fetch_array($d1)) {
                         ?>
                     <tr>
                         <th>Nama Petugas 1</th>
-                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas1']) ?></td>
+                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Petugas 2</th>
-                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas2']) ?></td>
+                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas_2']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Petugas 3</th>
-                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas3']) ?></td>
+                        <td>: <?= htmlspecialchars($d_petugas['nama_petugas_3']) ?></td>
                     </tr>
                     <?php } ?>
                     <tr>

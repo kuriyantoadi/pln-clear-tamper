@@ -17,12 +17,12 @@ $alamat = mysqli_real_escape_string($koneksi, $_POST['alamat']);
 $no_hp = mysqli_real_escape_string($koneksi, $_POST['no_hp']);
 $no_kwh = mysqli_real_escape_string($koneksi, $_POST['no_kwh']);
 $indikasi = mysqli_real_escape_string($koneksi, $_POST['indikasi']);
-$id_user1 = mysqli_real_escape_string($koneksi, $_POST['id_user1']);
-$id_user2 = mysqli_real_escape_string($koneksi, $_POST['id_user2']);
-$id_user3 = mysqli_real_escape_string($koneksi, $_POST['id_user3']);
+$id_user = mysqli_real_escape_string($koneksi, $_POST['id_user']);
+// $id_user2 = mysqli_real_escape_string($koneksi, $_POST['id_user2']);
+// $id_user3 = mysqli_real_escape_string($koneksi, $_POST['id_user3']);
 // $id_user = $_POST['id_user'];
-// $nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
-// $nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
+$nama_petugas_2 = htmlspecialchars($_POST['nama_petugas_2']);
+$nama_petugas_3 = htmlspecialchars($_POST['nama_petugas_3']);
 
 // var_dump($id_user);
 // exit();
@@ -45,9 +45,9 @@ $query = "INSERT INTO tb_clear_tamper_regu (
     no_hp,
     no_kwh,
     indikasi,
-    id_user1,
-    id_user2,
-    id_user3,
+    id_user,
+    nama_petugas_2,
+    nama_petugas_3,
     photo_kwh,
     status_permintaan
 ) VALUES (
@@ -59,9 +59,9 @@ $query = "INSERT INTO tb_clear_tamper_regu (
     '$no_hp',
     '$no_kwh',
     '$indikasi',
-    '$id_user1',
-    '$id_user2',
-    '$id_user3',
+    '$id_user',
+    '$nama_petugas_2',
+    '$nama_petugas_3',
     '$photo_kwh',
     '$status_permintaan'
 )";
