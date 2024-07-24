@@ -10,15 +10,11 @@
                 <table class="table table-hover">
                     <?php
                         // include '../koneksi.php';
-                        $d1 = mysqli_query($koneksi, "SELECT tb_clear_tamper_regu.*,
-                tb_user.id_user, 
-                tb_user.nama_petugas
-                FROM tb_user
-                JOIN tb_clear_tamper_regu
-                ON tb_clear_tamper_regu.id_user = tb_user.id_user
-                WHERE tb_user.jabatan = 'petugas' AND
-                tb_user.id_user = ".$_SESSION['id_user']."
-                ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC");
+                        $d1 = mysqli_query($koneksi, "SELECT * 
+                                            FROM tb_clear_tamper_regu 
+                                            JOIN tb_user ON tb_clear_tamper_regu.id_user = tb_user.id_user 
+                                            WHERE tb_clear_tamper_regu.id_clear_tamper_regu = '". $d['id_clear_tamper_regu']. "' 
+                                            ORDER BY tb_clear_tamper_regu.tgl_permintaan ASC");
                         while ($d_petugas = mysqli_fetch_array($d1)) {
                         ?>
                     <tr>

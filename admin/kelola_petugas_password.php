@@ -7,8 +7,11 @@ if ($_SESSION['status'] != "admin") {
 include '../koneksi.php';
 
 $id_user = $_POST['id_user'];
+// $password = sha1($_POST['password']);
 $password = sha1($_POST['password']);
 
+// var_dump($password);
+// exit();
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_user SET
         password = '$password'
         where id_user='$id_user'

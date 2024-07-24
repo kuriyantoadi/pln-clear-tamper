@@ -31,7 +31,7 @@
         <div class="card-body">
             
             <?php include('../alert.php'); ?>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Tambah Petugas Regu</button>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#tambah"><i data-feather="plus"></i>Permintaan Regu</button>
             <?php include('clear_tamper_regu_modal_tambah.php') ?>
             <table id="tabel_js" class="table table-hover">
                 <thead>

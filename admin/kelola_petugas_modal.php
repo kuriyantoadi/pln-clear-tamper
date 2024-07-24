@@ -220,7 +220,7 @@
                         </tr>
                         <tr>
                             <td>Password Baru</td>
-                            <td><input class="form-control" type="text" name="id_regu" value="" required></td>
+                            <td><input class="form-control" type="text" name="password" value="" required></td>
                         </tr>
 
                     </table>
