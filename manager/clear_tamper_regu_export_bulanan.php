@@ -59,9 +59,8 @@ if ($_SESSION['status'] != "manager") {
 	}
 	</style>
 <?php 
-    // Activate these headers to enable Excel export
-    // header("Content-type: application/vnd-ms-excel");
-    // header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Clear_tamper_regu_bulanan.xls");
 ?>
 
 	<table id="tabel_js" class="table table-primary">

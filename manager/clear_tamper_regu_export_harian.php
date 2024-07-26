@@ -57,8 +57,8 @@ if ($_SESSION['status'] != "manager") {
 	}
 	</style>
 <?php 
-    // header("Content-type: application/vnd-ms-excel");
-    // header("Content-Disposition: attachment; filename=Data Pegawai.xls");
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data Pegawai.xls");
 ?>
 
 	<table id="tabel_js" class="table table-primary">
