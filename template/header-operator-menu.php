@@ -6,7 +6,7 @@
                         <div class="nav accordion" id="accordionSidenav">
 
                             <!-- Sidenav Menu Heading (Core)-->
-                            <div class="sidenav-menu-heading">Menu Admin</div>
+                            <div class="sidenav-menu-heading">Menu operator</div>
                             <!-- Sidenav Accordion (Dashboard)-->
 
                             <a class="nav-link collapsed" href="dashboard.php" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">

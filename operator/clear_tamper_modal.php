@@ -9,12 +9,16 @@
             <div class="modal-body">
                 <table class="table table-hover">
                     <tr>
+                        <th>Nama Petugas</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
+                    <tr>
                         <th>Bondg</th>
                         <td>: <?= htmlspecialchars($d['bondg']) ?></td>
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
+                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -29,7 +33,6 @@
                         <td>: <?= htmlspecialchars($d['no_hp']) ?></td>
                     </tr>
                     <tr>
-                    <tr>
                         <th>Nomor KWH</th>
                         <td>: <?= htmlspecialchars($d['no_kwh']) ?></td>
                     </tr>
@@ -38,7 +41,7 @@
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
                     <tr>
-                        <th>photo_kwh</th>
+                        <th>Photo KWH</th>
                         <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
                     </tr>
                     <tr>
@@ -48,11 +51,13 @@
                      <tr>
                         <th>Status Permintaan</th>
                         <td>: 
-                            <?php if($d['clear_tamper']){ ?>
+                            <?php if($d['status_permintaan'] == 'terkirim'){ ?>
                                 <div class="badge bg-success text-white rounded-pill">Terkirim</div>
-                            <?php }elseif($d['clear_tamper'] == NULL){ ?>
-                                <div class="badge bg-warning text-white rounded-pill">Pengajuan</div>
-                            <?php } ?>
+                            <?php }elseif($d['status_permintaan'] == 'proses'){ ?>
+                                <div class="badge bg-warning text-white rounded-pill">Proses</div>
+                            <?php }else { ?>
+                                <div class="badge bg-danger text-white rounded-pill">Error</div>
+                                <?php } ?>
                        </td>
                     </tr>
                 </table>
@@ -74,15 +79,19 @@
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_kirim.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_kirim.php" id="formInputClearTamper" method="post" enctype="multipart/form-data">
                 <table class="table table-hover">
+                    <tr>
+                        <th>Nama Petugas</th>
+                        <td>: <?= htmlspecialchars($d['nama_petugas']) ?></td>
+                    </tr>
                     <tr>
                         <th>Bondg</th>
                         <td>: <?= htmlspecialchars($d['bondg']) ?></td>
                     </tr>
                     <tr>
                         <th>Tanggal Permintaan</th>
-                        <td>: <?= date('d F Y', strtotime($d['tgl_permintaan'])) ?></td>
+                        <td>: <?= htmlspecialchars($d['tgl_permintaan']) ?></td>
                     </tr>
                     <tr>
                         <th>Nama Pelapor</th>
@@ -104,14 +113,14 @@
                         <th>Indikasi</th>
                         <td>: <?= htmlspecialchars($d['indikasi']) ?></td>
                     </tr>
-                    <tr>
-                        <th>photo_kwh</th>
-                        <td>: <img width="100px" src="../assets/photo_kwh/<?= htmlspecialchars($d['photo_kwh']) ?>"></td>
-                    </tr>
+                    <!-- <tr>
+                        <th>id_user</th>
+                        <td>: <?= htmlspecialchars($d['id_user']) ?></td>
+                    </tr> -->
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" require>
+                            <input type="text" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
                             <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>
@@ -134,57 +143,65 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Petugas</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Pengajuan Clear Tamper</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="clear_tamper_edit.php" method="post" enctype="multipart/form-data">
+                <form action="clear_tamper_edit.php" id="formEditClearTamper" method="post" enctype="multipart/form-data">
                     <!-- Menyimpan ID pengguna yang sedang diedit -->
                     <table class="table table-hover">
                     <tr>
-                        <th>Bondg</th>
-                        <td>
-                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
-                            <input type="text" name="bondg" class="form-control" value="<?= htmlspecialchars($d['bondg']) ?>">
-                        </td>
-                    </tr>
+                            <td>Nama Petugas</td>
+                            <td>
+                                <select name="id_user" class="form-control" id="">
+                                    <option value="<?= $d['id_user']?>">Pilihan Awal = <?= $d['nama_petugas']?></option>
+                                        <?php
+                                            $d1 = mysqli_query($koneksi, "select * from tb_user where status='petugas'");
+                                            while ($d_pegawai = mysqli_fetch_array($d1)) {
+                                        ?>
+                                            <option value="<?php echo $d_pegawai['id_user'] ?>"><?php echo $d_pegawai['nama_petugas'] ?></option>
+                                        <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
                     <tr>
-                        <th>Tanggal Permintaan</th>
-                        <td><input type="date" name="tgl_permintaan" class="form-control" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>Nama Pelapor</th>
-                        <td><input type="text" name="nama_pelapor" class="form-control" value="<?= htmlspecialchars($d['nama_pelapor']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>Alamat Pelapor</th>
-                        <td><input type="text" name="alamat" class="form-control" value="<?= htmlspecialchars($d['alamat']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>No Hp</th>
-                        <td><input type="text" name="no_hp" class="form-control" value="<?= htmlspecialchars($d['no_hp']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>Nomor KWH</th>
-                        <td><input type="text" name="no_kwh" class="form-control" value="<?= htmlspecialchars($d['no_kwh']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>Indikasi</th>
-                        <td><input type="text" name="indikasi" class="form-control" value="<?= htmlspecialchars($d['indikasi']) ?>"></td>
-                    </tr>
-                    <tr>
-                        <th>id_user</th>
-                        <td><input type="text" name="id_user" class="form-control" value="<?= htmlspecialchars($d['id_user']) ?>"></td>
-                    </tr>
-                    <tr>
+                            <td>bondg</td>
+                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" id="inputBondg" required></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Permintaan</td>
+                            <td><input class="form-control" type="date" name="tgl_permintaan" value="<?= isset($d['tgl_permintaan']) ? $d['tgl_permintaan'] : date('Y-m-d') ?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Pelapor</td>
+                            <td><input class="form-control" type="text" name="nama_pelapor" value="<?= htmlspecialchars($d['nama_pelapor'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat</td>
+                            <td><input class="form-control" type="text" name="alamat" value="<?= htmlspecialchars($d['alamat'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>No HP</td>
+                            <td><input class="form-control" type="text" name="no_hp" value="<?= htmlspecialchars($d['no_hp'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>No KWH</td>
+                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
+                        </tr>
+                        <tr>
+                            <td>Indikasi</td>
+                            <td>
+                                <input class="form-control" type="text" name="indikasi" value="<?= htmlspecialchars($d['indikasi'])?>" required>
+                                <input type="hidden" name="id_clear_tamper" class="form-control" value="<?= $d['id_clear_tamper'] ?>" required>
+                            </td>
+                        </tr>    
+                        <tr>
                         <th>Clear Tamper</th>
-                        <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="<?= htmlspecialchars($d['clear_tamper']) ?>">
-                            <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
-                        </td>
-                    </tr>
-                                                 
-
+                            <td>
+                                <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                            </td>
+                        </tr>                                       
+                        
                 </table>
 
 
@@ -209,7 +226,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Unduh Database</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Petugas</h5>
                 <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -240,13 +257,14 @@
                             <td>Wilayah Kerja</td>
                             <td><input class="form-control" type="text" name="wilker" value="" required></td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td>Status</td>
                             <td>
                                 <select name="status" class="form-control" id="">
                                     <option value="">Pilihan</option>
                                     <option value="operator">operator</option>
                                     <option value="petugas">petugas</option>
+                                    <option value="manager">manager</option>
                                 </select>
                             </td>
                         </tr>

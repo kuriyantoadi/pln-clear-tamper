@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-if ($_SESSION['status'] != "admin") {
+if ($_SESSION['status'] != "operator") {
     header("location:index.php?pesan=belum_login");
 }
 ?>
@@ -82,7 +82,7 @@ if ($_SESSION['status'] != "admin") {
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                             Account
                         </a>
-                        <a class="dropdown-item" href="../admin/logout.php">
+                        <a class="dropdown-item" href="../operator/logout.php">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Logout
                         </a>

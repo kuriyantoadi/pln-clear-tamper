@@ -77,7 +77,7 @@ if ($_SESSION['status'] != "manager") {
                             <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                             Account
                         </a>
-                        <a class="dropdown-item" href="../admin/logout.php">
+                        <a class="dropdown-item" href="../operator/logout.php">
                             <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
                             Logout
                         </a>
