@@ -126,7 +126,7 @@
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="" required></td>
+                            <td><input class="form-control" type="number" name="nik" value="" required></td>
                         </tr>
                         <tr>
                             <td>Nama Petugas</td>

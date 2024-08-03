@@ -25,7 +25,7 @@
                                 <select name="nama_petugas_2" class="form-control" id="">
                                 <option value="<?php echo $d['nama_petugas_2']?>">Pilihan</option>                                
                                     <?php
-                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE status='petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_2 = mysqli_fetch_array($d1)) {
                                     ?>
                                         <option value="<?php echo $d_petugas_2['nama_petugas']?>"><?php echo $d_petugas_2['nama_petugas'] ?></option>
@@ -40,7 +40,7 @@
                                 <select name="nama_petugas_3" class="form-control" id="">
                                 <option value="<?php echo $d['nama_petugas_3']?>">Pilihan</option>                                
                                     <?php
-                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE jabatan = 'petugas' ORDER BY nama_petugas ASC;");
+                                        $d1 = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE status='petugas' ORDER BY nama_petugas ASC;");
                                         while ($d_petugas_3 = mysqli_fetch_array($d1)) {
                                     ?>
                                         <option value="<?php echo $d_petugas_3['nama_petugas']?>"><?php echo $d_petugas_3['nama_petugas'] ?></option>
@@ -70,7 +70,7 @@
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="" require></td>
+                            <td><input class="form-control" type="number" name="no_kwh" id="inputNokwh" value="" require></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>

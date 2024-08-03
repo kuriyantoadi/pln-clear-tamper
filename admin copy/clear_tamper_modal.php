@@ -186,7 +186,7 @@
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
+                            <td><input class="form-control" type="number" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
@@ -198,7 +198,7 @@
                         <tr>
                         <th>Clear Tamper</th>
                             <td>
-                                <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                                <input type="number" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
                             </td>
                         </tr>                                       
                         
@@ -243,7 +243,7 @@
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="" required></td>
+                            <td><input class="form-control" type="number" name="nik" value="" required></td>
                         </tr>
                         <tr>
                             <td>Nama Petugas</td>
