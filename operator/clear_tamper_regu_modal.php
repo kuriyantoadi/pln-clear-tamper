@@ -222,7 +222,7 @@
                         <?php } ?>
                         <tr>
                             <td>bondg</td>
-                            <td><input class="form-control" type="text" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" require></td>
+                            <td><input class="form-control" type="number" name="bondg" value="<?= htmlspecialchars($d['bondg'])?>" require></td>
                         </tr>
                         <tr>
                             <td>Tanggal Permintaan</td>
@@ -242,7 +242,7 @@
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" require></td>
+                            <td><input class="form-control" type="number" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" require></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
@@ -257,7 +257,7 @@
                         </tr>
                         <th>Clear Tamper</th>
                             <td>
-                                <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                                <input type="number" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
                             </td>
                         </tr>                             
                         
