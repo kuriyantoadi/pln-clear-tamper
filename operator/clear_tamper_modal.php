@@ -186,7 +186,7 @@
                         </tr>
                         <tr>
                             <td>No KWH</td>
-                            <td><input class="form-control" type="text" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
+                            <td><input class="form-control" type="number" name="no_kwh" id="inputNokwh" value="<?= htmlspecialchars($d['no_kwh'])?>" required></td>
                         </tr>
                         <tr>
                             <td>Indikasi</td>
@@ -243,7 +243,7 @@
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="text" name="nik" value="" required></td>
+                            <td><input class="form-control" type="number" name="nik" value="" required></td>
                         </tr>
                         <tr>
                             <td>Nama Petugas</td>
