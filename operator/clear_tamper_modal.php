@@ -120,7 +120,7 @@
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input type="text" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
+                            <input type="number" name="clear_tamper" class="form-control" value="" id="inputClearTamper" required>
                             <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>
@@ -198,7 +198,7 @@
                         <tr>
                         <th>Clear Tamper</th>
                             <td>
-                                <input type="text" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
+                                <input type="number" name="clear_tamper" class="form-control" value="<?= $d['clear_tamper'] ?>" id="inputClearTamper" required>
                             </td>
                         </tr>                                       
                         

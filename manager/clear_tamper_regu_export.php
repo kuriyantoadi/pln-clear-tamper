@@ -5,8 +5,8 @@ if ($_SESSION['status'] != "manager") {
     exit;
 }
 
-// header("Content-type: application/vnd-ms-excel");
-// header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data_Pegawai.xls");
 ?>
 
 <!DOCTYPE html>
