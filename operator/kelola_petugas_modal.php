@@ -58,34 +58,58 @@
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="number" name="nik" value="<?= htmlspecialchars($d['nik']) ?>" required></td>
+                            <td>
+                                <input class="form-control"  type="text" name="nik" value="<?= htmlspecialchars($d['nik']) ?>" required minlength="16" maxlength="16" pattern="\d{16}" title="NIK harus terdiri dari 16 digit angka" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);" >
+                            </td>
                         </tr>
+
                         <tr>
                             <td>Nama Petugas</td>
                             <td><input class="form-control" type="text" name="nama_petugas" value="<?= htmlspecialchars($d['nama_petugas']) ?>" required></td>
                         </tr>
                         <tr>
                             <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="<?= htmlspecialchars($d['jabatan']) ?>" required></td>
+                            <td>
+                                <select name="jabatan" class="form-control">
+                                    <option value="<?= htmlspecialchars($d['jabatan']) ?>">Pilihan Awal (<?= htmlspecialchars($d['jabatan']) ?>)</option>
+                                    <option value="Operator">Operator</option>
+                                    <option value="Yandal">Yandal</option>
+                                    <option value="K3">K3</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>Regu</td>
                             <td>
-                            <select name="id_regu" id="" class="form-control" required>
-                            <?php     
-                            $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='{$d['id_regu']}'");
-                            while ($d_regu = mysqli_fetch_array($data_regu)) { 
-                                ?>
-                            <option value="<?= $d_regu['id_regu'] ?>">Plihan Awal = <?= $d_regu['nama_regu']?></option>
-                            <?php
-                            $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu");
-                            while ($d_regu = mysqli_fetch_array($data_regu)) {
-                            ?>
-                            <option value="<?= $d_regu['id_regu'] ?>"><?= $d_regu['nama_regu'] ?></option>
-                            <?php } ?>
-                            <?php } ?>
-                        </select>
-                        </td>
+                                <select name="id_regu" id="" class="form-control" required>
+                                    <?php     
+                                    $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu WHERE id_regu='{$d['id_regu']}'");
+                                    while ($d_regu = mysqli_fetch_array($data_regu)) { 
+                                        ?>
+                                    <option value="<?= $d_regu['id_regu'] ?>">Plihan Awal = <?= $d_regu['nama_regu']?></option>
+                                    <?php
+                                    $data_regu = mysqli_query($koneksi, "SELECT * from tb_user_regu");
+                                    while ($d_regu = mysqli_fetch_array($data_regu)) {
+                                    ?>
+                                    <option value="<?= $d_regu['id_regu'] ?>"><?= $d_regu['nama_regu'] ?></option>
+                                    <?php } ?>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wilayah Kerja</td>
+                            <td>
+                                <select name="wilker" class="form-control" required>
+                                    <option value="<?= $d['wilker'] ?>">Pilihan Awal ( <?= $d['wilker'] ?> )</option>
+                                    <option value="Saketi">Saketi</option>
+                                    <option value="Picung">Picung</option>
+                                    <option value="Mandalawangi">Mandalawangi</option>
+                                    <option value="Pandeglang">Pandeglang</option>
+                                </select>
+                            </td>
                         </tr>
                     </table>
                     <!-- Tambahkan token CSRF di sini jika diperlukan -->
@@ -126,7 +150,9 @@
                         </tr>
                         <tr>
                             <td>NIK</td>
-                            <td><input class="form-control" type="number" name="nik" value="" required></td>
+                            <td>
+                                <input class="form-control"  type="text" name="nik" value="" required minlength="16" maxlength="16" pattern="\d{16}" title="NIK harus terdiri dari 16 digit angka" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);" >
+                            </td>
                         </tr>
                         <tr>
                             <td>Nama Petugas</td>
@@ -134,11 +160,28 @@
                         </tr>
                         <tr>
                             <td>Jabatan</td>
-                            <td><input class="form-control" type="text" name="jabatan" value="" required></td>
+                            <td>
+                                <select name="jabatan" class="form-control" required>
+                                    <option value="">Pilihan</option>
+                                    <option value="Operator">Operator</option>
+                                    <option value="Yandal">Yandal</option>
+                                    <option value="K3">K3</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>Wilayah Kerja</td>
-                            <td><input class="form-control" type="text" name="wilker" value="" required></td>
+                            <td>
+                                <select name="wilker" class="form-control" required>
+                                    <option value="">Pilihan</option>
+                                    <option value="Saketi">Saketi</option>
+                                    <option value="Picung">Picung</option>
+                                    <option value="Mandalawangi">Mandalawangi</option>
+                                    <option value="Pandeglang">Pandeglang</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>Regu</td>
@@ -155,7 +198,6 @@
                                 </select>
                             </td>
                         </tr>
-
 
                          <tr>
                             <td>Status</td>
