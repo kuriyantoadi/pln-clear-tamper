@@ -9,17 +9,6 @@ include '../koneksi.php';
 $id_clear_tamper = htmlspecialchars($_POST['id_clear_tamper']);
 $clear_tamper = htmlspecialchars($_POST['clear_tamper']);
 
-// Ambil nilai clear_tamper yang ada di database berdasarkan id_clear_tamper
-$query = mysqli_query($koneksi, "SELECT clear_tamper FROM tb_clear_tamper");
-$data = mysqli_fetch_assoc($query);
-
-// Cek apakah nilai clear_tamper yang baru sama dengan yang ada di database
-if ($data['clear_tamper'] === $clear_tamper) {
-    // Jika sama, kembalikan pesan error
-    header("location:clear_tamper.php?pesan=clear_tamper_sama");
-    exit();
-}
-
 if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';
 }elseif(!empty($clear_tamper)){ // jika kode tamper tidak kosong
@@ -28,15 +17,15 @@ if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = '';
 }
 
-// Lanjutkan update jika clear_tamper tidak sama
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper SET
         clear_tamper='$clear_tamper',
         status_permintaan='$status_permintaan' WHERE id_clear_tamper='$id_clear_tamper'
         ");
 
+// exit();
+// var_dump(cek_edit);
 if ($cek_edit) {
     header("location:clear_tamper.php?pesan=update_clear_tamper_berhasil");
 }else {
-    header("location:clear_tamper.php?pesan=update_clear_tamper_gagal");
+    header("location:clear_tamper.php?pesan=update_clear_tamper_berhasil");
 }
-?>

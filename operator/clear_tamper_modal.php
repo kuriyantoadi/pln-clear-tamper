@@ -120,7 +120,7 @@
                     <tr>
                         <th>Clear Tamper</th>
                         <td>
-                            <input class="form-control"  type="number" name="clear_tamper" value="" required minlength="20" maxlength="20" pattern="\d{20}" title="Kode Clear Tamper harus terdiri dari 20 digit angka" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 20);" >
+                            <input class="form-control"  type="text" name="clear_tamper" value="<?= $d['clear_tamper'] ?>" required minlength="20" maxlength="20" pattern="\d{20}" title="Kode Clear Tamper harus terdiri dari 20 digit angka" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 20);" >
                             <input type="hidden" name="id_clear_tamper" value="<?= $d['id_clear_tamper'] ?>">
                         </td>
                     </tr>

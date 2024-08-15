@@ -49,6 +49,20 @@
                 <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
             ";
+        } elseif ($_GET['pesan'] == "clear_tamper_sama") {
+            echo "
+            <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                Kode Clear Tamper Sudah Pernah Di Inputkan
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
+        } elseif ($_GET['pesan'] == "update_clear_tamper_berhasil") {
+            echo "
+            <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+                Clear Tamper Berhasil Terkirim
+                <button class='btn-close' type='button' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
         } elseif ($_GET['pesan'] == "update_clear_temper_berhasil") {
             echo "
             <div class='alert alert-primary alert-dismissible fade show' role='alert'>
