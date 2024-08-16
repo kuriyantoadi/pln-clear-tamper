@@ -10,15 +10,14 @@ $id_clear_tamper = htmlspecialchars($_POST['id_clear_tamper']);
 $clear_tamper = htmlspecialchars($_POST['clear_tamper']);
 
 // Ambil nilai clear_tamper yang ada di database berdasarkan id_clear_tamper
-$query = mysqli_query($koneksi, "SELECT clear_tamper FROM tb_clear_tamper");
-$data = mysqli_fetch_assoc($query);
+$query = mysqli_query($koneksi, "SELECT clear_tamper FROM tb_clear_tamper where clear_tamper=$clear_tamper ");
 
-// Cek apakah nilai clear_tamper yang baru sama dengan yang ada di database
-if ($data['clear_tamper'] === $clear_tamper) {
-    // Jika sama, kembalikan pesan error
+if (mysqli_num_rows($query) > 0) {
     header("location:clear_tamper.php?pesan=clear_tamper_sama");
+    // echo "data sama";
     exit();
-}
+} 
+
 
 if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = 'proses';

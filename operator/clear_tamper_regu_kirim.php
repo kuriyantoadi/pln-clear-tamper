@@ -17,15 +17,14 @@ if($clear_tamper == NULL){ // jika kode tamper kosong
     $status_permintaan = '';
 }
 
-// Cek apakah clear_tamper yang baru sudah ada di database
-$query = mysqli_query($koneksi, "SELECT * FROM tb_clear_tamper_regu WHERE clear_tamper='$clear_tamper' AND id_clear_tamper_regu != '$id_clear_tamper_regu'");
-$cek_duplikasi = mysqli_num_rows($query);
+// Ambil nilai clear_tamper yang ada di database berdasarkan id_clear_tamper
+$query = mysqli_query($koneksi, "SELECT clear_tamper_regu FROM tb_clear_tamper where clear_tamper=$clear_tamper ");
 
-if ($cek_duplikasi > 0) {
-    // Jika sudah ada, kembalikan pesan error
-    header("location:clear_tamper_regu.php?pesan=clear_tamper_sudah_ada");
+if (mysqli_num_rows($query) > 0) {
+    header("location:clear_tamper_regu.php?pesan=clear_tamper_sama");
+    // echo "data sama";
     exit();
-}
+} 
 
 // Lanjutkan update jika tidak ada duplikasi
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_clear_tamper_regu SET
